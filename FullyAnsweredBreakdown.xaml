@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.FullyAnsweredBreakdown"
+             Title="Fully Answered Breakdown">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="40" WidthRequest="500">
+
+            <Label 
+Text="The pie charts below show the response breakdown for the question: Were your questions fully answered by the chatbot? — for today, this week, and this month." 
+FontSize="17" 
+TextColor="Black" 
+HorizontalOptions="Center" 
+HorizontalTextAlignment="Start"
+VerticalTextAlignment="Start"
+        />
+
+            <!-- Centered Button with fixed width -->
+            <Button Text="Reload Statistics"
+                    Clicked="OnReloadClicked"
+                    WidthRequest="160"
+                    HorizontalOptions="Center" />
+
+            <!-- Centered Labels -->
+            <Label Text="Today"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+            <chart:ChartView x:Name="TodayChart" HeightRequest="300" />
+
+            <Label Text="This Week"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+            <chart:ChartView x:Name="WeekChart" HeightRequest="300" />
+
+            <Label Text="This Month"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+            <chart:ChartView x:Name="MonthChart" HeightRequest="300" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

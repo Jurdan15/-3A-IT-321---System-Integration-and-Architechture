@@ -1,0 +1,38 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bot.WelcomePage"
+             Title="Welcome Page"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="40" 
+            Padding="30"
+            VerticalOptions="Center">
+
+            <Image Source="logo.png" 
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   HorizontalOptions="Center"/>
+
+            <Label 
+                Text="THE CSU-GONZAGA INQUIRY ASSISTANCE CHATBOT"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource TextColor}"
+                HorizontalTextAlignment="Center"/>
+
+            <Button 
+                Text="Start Chat"
+                BackgroundColor="{DynamicResource EntryBackgroundColor}"
+                TextColor="{DynamicResource EntryTextColor}"
+                FontSize="18"
+                CornerRadius="20"
+                HeightRequest="50"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="OnStartChatClicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

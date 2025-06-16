@@ -1,0 +1,43 @@
+version: "3.1"
+
+stories:
+- story: Greet and respond
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: User affirms
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- story: User denies
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- story: Thanking the bot
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- story: Bot identity challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- story: ask requirements and student type
+  steps:
+    - intent: requirements_for_enrollment
+    - action: action_ask_student_type
+
+- story: student type reply
+  steps:
+    - intent: inform_student_type
+    - action: action_give_requirements
+

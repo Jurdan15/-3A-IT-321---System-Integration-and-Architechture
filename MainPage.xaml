@@ -1,0 +1,41 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chatbot_Admin.MainPage"
+             Title="Welcome Page"
+             BackgroundColor="#FFFFFF">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="40" 
+            Padding="30"
+            VerticalOptions="Center">
+
+            <Image Source="logo.png" 
+               HeightRequest="300"
+               WidthRequest="300"
+               HorizontalOptions="Center"/>
+
+            <Label 
+                Text="THE CSU-GONZAGA INQUIRY ASSISTANCE CHATBOT"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#2C3E50"
+                HorizontalTextAlignment="Center"/>
+
+            
+            <Button 
+                Text="Login"
+                BackgroundColor="#800001"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="20"
+                HeightRequest="50"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="OnLoginChatClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,1127 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hey
+    - good morning
+    - good evening
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - goodbye
+    - bye
+    - see you later
+    - take care
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - sure
+    - of course
+    - okay
+    - ok
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - not really
+
+- intent: thank
+  examples: |
+    - thanks
+    - thank you
+    - appreciate it
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you human?
+    - am I talking to a bot?
+    - are you real?
+- intent: bad_words
+  examples: |
+    - gago
+    - bobo
+    - putangina tanga laglag
+    - pakyu fuckyou
+    - bitch
+    - asshole
+
+####################registrar#############################################
+
+- intent: requirements_for_enrollment
+  examples: |
+    - What are the requirements for enrollment?
+    - I want to enroll. What do I need?
+    - What documents do I need to enroll?
+    - What documents should I prepare to enroll?
+    - List the requirements for enrolling
+    - Can you tell me the enrollment requirements?
+    - I’m a student, what do I need to enroll?
+    - What are the requirements needed to enroll?
+    - What documents are needed for enrollment
+    - enrollment requirements
+    - requirements for enrollment
+    - documents for enrollment
+
+
+- intent: inform_student_type
+  examples: |
+    - I am a [new](student_type) student
+    - I'm a [transferee](student_type)
+    - [old](student_type)
+    - I am a [returning](student_type) student
+    - [transferee](student_type)
+    - [new](student_type)
+    
+
+- intent: otr
+  examples: |
+    - How to get OTR
+    - how to issue OTR
+    - how to avail OTR
+    - How do I request for Transcript of Records?
+    - I need my TOR
+    - How to get Official Transcript of Records
+    - I want to request my transcript
+    - Procedure to get OTR
+    - What are the requirements for TOR?
+    - otr
+    - how to avail transcript of records
+
+- intent: inform_otr_issuance_type
+  examples: |
+    - [maiden](otr_issuance_type)
+    - [first issuance](otr_issuance_type)
+    - [reissuance](otr_issuance_type)
+    - [second request](otr_issuance_type)
+    - This is my [first](otr_issuance_type) request
+    - It's a [reissuance](otr_issuance_type)
+
+- intent: issuance_of_certificate_of_grades
+  examples: |
+    - How to get cog
+    - How to get Copy of grades
+    - Requirements to get cog
+    - Requirements to get copy of grades
+    - Process to get cog
+    - Process to get copy of grades
+    - copy of grades
+    - cog
+    - how to avail cog
+    - how to avail copy of grades
+    - how to secure copy of grades
+    - hot to secure cog
+    - how to issue copy of grades
+    - how to issue cog
+
+- intent: cav
+  examples: |
+    - How to get cav
+    - How to get CERTIFICATION OF AUTHENTICATION AND VERIFICATION 
+    - Requirements FOR THE ISSUANCE OF CERTIFICATION OF AUTHENTICATION AND VERIFICATION (CAV) 
+    - Requirements to get cav
+    - Process to get cav
+    - Process to get CERTIFICATION OF AUTHENTICATION AND VERIFICATION
+    - CAV
+    - requirements to secure a CERTIFICATION OF AUTHENTICATION AND VERIFICATION 
+    - requirements to secure a CAV
+    - requirements to avail CERTIFICATION OF AUTHENTICATION AND VERIFICATION 
+    - requirements to avail CAV
+
+- intent: re_issuance_of_diploma
+  examples: |
+    - Requirements for re-issuance of diploma
+    - how to get re-issuance of diploma
+    - Process for the re-issuance of diploma
+    - Procedure for the re-issuance of diploma
+    - diploma
+    - re-issuance of diploma
+    - how to request for re-issuance of diploma
+    - processes to get re-issuance of diploma
+    - diploma re-issuance
+    - re-issuance of diploma. how to avail?
+
+- intent: ADDING_CANCELLING_DROPPING OF SUBJECTS
+  examples: |
+    - Process for  adding subject
+    - Procedure for cancelling subject
+    - procedure for dropping subject 
+    - how to add subject
+    - how to drop subject
+    - how to cancel subject
+    - requirement to add subject
+    - requirement to drop subject
+    - requirement to cancel subject
+    - i want to drop a subject. what to do
+    - i want to add a subject. what to do
+    - i want to cancel a subject. what to do
+
+- intent: rectification_of_grades
+  examples: |
+    - PROCEDURES FOR THE RECTIFICATION OF GRADES 
+    - how to get RECTIFICATION OF GRADES 
+    - Requirements for RECTIFICATION OF GRADES 
+    - RECTIFICATION OF GRADES 
+    - Requirements for the rectification of grades
+    - There is an error with my grades. I want it to be corrected. what to do?
+    - I want my grades in a subject to be corrected. what to do
+    - how to get my grades corrected
+    - process to get my grades corrected
+    - there is an error in the computation of my grades. how to correct it
+    
+    
+
+- intent: completion_of_grades
+  examples: |
+    - Requirement for completion of grades
+    - Procedure to get completion of grades
+    - Procedures for completion of grades
+    - How to get completion of grades
+    - How can i make completion of grades
+    - completion of grades
+    - my grades are incomplete and i want it to be completed. what to do
+    - what to do to get my grades completed
+    - process for the completion of grades
+    - grades completion
+
+- intent: dropping_out
+  examples: |
+    - Requirement for dropping out
+    - How to drop out
+    - Requirements to drop out
+    - Procedure for dropping out
+    - process to drop out
+    - i want to drop out
+    - how to drop out
+    - drop out
+    - what to do to drop out of school
+    - i want to drop out of school
+
+- intent: honorable_dismissal
+  examples: |
+    - requirements to get honorable dismissal
+    - How to get honorable of dismissal
+    - Procedures to get issuance of honorable dismissal
+    - Procedures for the issuance of honorable dismissal
+    - i want to get honorable of dismissal
+    - honorable dismissal
+    - processes to get honorable of dismissal
+    - how to avail honorable of dismissal
+    - how to secure honorable of dismissal
+    - how to issue an honorable of dismissal
+
+- intent: open_programs_for_new_students
+  examples: |
+    - List of available open programs in csu Gonzaga
+    - what are the open programs that i can avail
+    - Show the list of all open programs 
+    - available degree programs in csu gonzaga
+    - degree programs offered in csu gonzaga
+    - degree programs
+    - available courses in csu gonzaga
+    - list of courses in csu gonzaga
+    - list of degree programs in csu gonzaga
+    - degree programs available in csu gonzaga
+
+- intent: admission_process
+  examples: |
+    - How do I apply for the college admission test?
+    - How do I apply for the CAT?
+    - How do I apply for the entrance exam?
+    - How do I apply for the CAT exam?
+    - How do I apply for the college entrance exam?
+    - What are the steps to take the admission test?
+    - Can you explain the process for incoming freshmen admission?
+    - What's the procedure for college transferees?
+    - What are the steps are involved in the admission test?
+    - What are the requirements for college admission?
+    - What documents do I need to apply as a transferee?
+    - Can you list the requirements for taking the CAT?
+    - Do I need to bring a photo for admission?
+    - Is an authorization letter needed if someone else submits my documents?
+    - Admission requirements
+    - cat requirements
+    - entrance exam requirements
+    - how to apply for entrance exam
+    - entrance exam documents needed
+    - how to register for entrance exam
+    - entrance exam registration
+    - registration for entrance exam
+    - entrance exam procedure
+    - entrance exam
+
+
+
+#######guidance###################
+
+
+- intent: Counseling_concerns
+  examples: |
+    - Where do i seek counseling?
+    - i need help.
+    - Do csu offer counseling?
+    - Where do i seek help
+    - is there counseling in csu gonzaga
+    - how to go to counseling
+    - my mental health is bad and i want to counsel in the guidance
+    - counselling in the guidance office
+    - guidance office counseling services
+    - how to avail counseling services in the guidance
+    - how to get counseling services in the guidance
+
+- intent: Good_Moral
+  examples: |
+    - Requirement for issuance of certificate of good moral
+    - How to get good moral certificate
+    - i'd like to have good moral
+    - Good Moral Certificate
+    - Good Moral Character Certificate
+    - CGMC
+    - issuance of certificate of good moral
+    - how to avail a certificate of good moral
+    - how to secure a certificate of good moral
+    - how to issue a certificate of good moral
+    - Where to get certificate of good moral
+
+- intent: referral_service
+  examples: |
+    - What is referral service
+    - requirement for referral service
+    - referral service
+    - Process for referral service
+    - i'd like to get referral service
+    - i would like to avail a referral service
+    - what to do to avail referral service
+    - how to get referral service
+    - documents needed for referral service
+    - procedures to get referral service
+
+###########osdw################
+- intent: scholarship
+  examples: |
+    - I want to apply for a scholarship
+    - What are the available scholarships?
+    - Do you have government scholarships?
+    - How do I get a private scholarship?
+    - Scholarship application process
+    - Any financial aid for students?
+    - How to apply for a scholarship?
+    - scholarship
+    - how to get scholarship
+    - scholarship application process
+
+- intent: inform_scholarship_type
+  examples: |
+    - [university](scholarship_type)
+    - [private](scholarship_type)
+    - It's [university](scholarship_type) based
+    - I'm applying for a [private](scholarship_type) scholarship
+    - This is a [university](scholarship_type) based scholarship
+    - A [private](scholarship_type) grant
+
+- intent: student_assistantship
+  examples: |
+    - How to apply for student asisstantship
+    - Requirement for student assistantship
+    - I want to apply for assistantship 
+    - Id like to apply assistantship
+    - process to apply for assistantship
+    - student assistantship application
+    - how to avail student assistantship program
+    - i want to be part of the student assistantship
+    - procedures for student assistantship
+    - documents needed for student assistantship
+
+- intent: special_program_ra_9547
+  examples: |
+    - How to apply for APPLICATION FOR THE SPECIAL PROGRAM FOR THE EMPLOYMENT OF STUDENTS OR RA 9547 
+    - What are the requirements for APPLICATION FOR THE SPECIAL PROGRAM FOR THE EMPLOYMENT OF STUDENTS OR RA 9547 
+    - i want to apply  FOR THE SPECIAL PROGRAM FOR THE EMPLOYMENT OF STUDENTS OR RA 9547 
+    - Process of APPLICATION FOR THE SPECIAL PROGRAM FOR THE EMPLOYMENT OF STUDENTS OR RA 9547
+    - SPES
+    - how to apply for SPES
+    - SPES application process
+    - SPES application requirements
+    - how to be part of SPES
+    - how to avail SPES
+
+- intent: signing_of_clearance
+  examples: |
+    - Signing of clearance in OSDW
+    - requirements for signing of student clearance in OSDW
+    - OSDW signing of clearance
+    - process for signing of student clearance in OSDW
+    - clearance signing processes in OSDW
+    - how to get my clearance to be signed by OSDW
+    - I want my clearance to be signed by the OSDW
+    - I want my student clearance signed by OSDW
+    - OSDW sign my student clearance
+    - Process for signing my student clearance with OSDW
+
+
+###############May 15###########
+- intent: if_grade_is_completed
+  examples: |
+    - is my grade completed
+    - grades completed
+    - where to see my grade
+    - i want to know if my grades is completed
+    - completed grades
+    - how to see if grades are completed
+    - are our grades completed
+    - where can i see my grades
+    - i want to see my grades
+    - what is my grades
+
+- intent: password_in_gbs
+  examples: |
+    - i forgot my password in gbs
+    - what is my password in gbs
+    - gbs password
+    - change password in gbs
+    - password gbs
+    - forgot password gbs
+    - how to know my password in gbs
+    - password in gbs
+    - i forgot my password in gbs
+    - my gbs password
+
+- intent: student_id
+  examples: |
+    - how to get student id
+    - requirements for student id
+    - process to get id
+    - id
+    - student id
+    - where to get student id
+    - how to request for a student ID
+    - issuance of ID
+    - csu id
+    - where to request student id
+
+- intent: professor_of_our_courses
+  examples: |
+    - who is the professor of our course
+    - how can i contact the professor
+    - name of the professor of this course
+    - who is our professor
+    - who is our teacher
+    - teacher of our courses
+    - teacher of our subject
+    - subject teacher
+    - course teacher
+    - course professor
+    - professor of our course
+    - subject professor
+
+- intent: re-schedule_exam
+  examples: |
+    - can i re-scheduled my entrance exam
+    - Can I be re-scheduled if I was not able to take the exam
+    - is it possible to re-schedule cat
+    - is it ok to re-schedule cat exam
+    - is it ok to re-schedule entrance exam
+    - CAT re-schedule is it possible?
+    - is it possible to re-schedule cat entrance exam
+    - is it ok to re-schedule college admission test
+    - can i still re-schedule if i did not take the entrance exam on my scheduled day
+    - can i re-schedule my cat exam
+       
+
+- intent: releasing_cat_result
+  examples: |
+    - When will be the releasing of the CAT result
+    - how can I check my CAT result
+    - where to check the CAT result
+    - when can i see the cat result
+    - when can i see the result of cat
+    - i want to know my cat result
+    - i want to know my result in the cat exam
+    - cat exam result
+    - cat result
+    - cat result when
+
+- intent: cannot_register_online_portal
+  examples: |
+    - What if we cannot register in the online portal
+    - I cannot access the online registration portal
+    - I cannot access online portal. what to do
+    - online portal not accessible
+    - online portal cannot register
+    - I was not able to register in the online portal
+    - If i cannot register in the online portal, can i register on-site?
+    - I cannot register on online portal. what to do
+    - what to do if i cannot register in the online portal
+    - who to ask what's wrong if i cannot register in the online portal
+
+- intent: average_passing_rate
+  examples: |
+    - What is the average passing role for us to enroll in our priority course?
+    - What is the passing rate for BSIT 
+    - What is the passing rate for BSAIS 
+    - What is the passing rate for BSCRIM
+    - What is the passing rate for BSA
+    - What is the passing rate for BSHM
+    - What is the passing rate for BSED
+    - What is the passing rate for IT
+    - What is the passing rate for Cbea
+    - What is the passing rate for Accountancy
+    - What is the passing rate for Crim
+    - What is the passing rate for Criminology
+    - What is the passing rate for Agri
+    - What is the passing rate for Agriculture
+    - What is the passing rate for HM
+    - What is the passing rate for Educ 
+
+- intent: cannot_complete_registration_process
+  examples: |
+    - Why cant I complete my registration process
+    - I cannot complete my registration process
+    - Process registration cannot be completed. why?
+    - Process registration not successful. why?
+    - I have a problem with my registration process
+    - Why is my registration process not completed
+    - why can't i complete my registration process in the portal
+    - there is an error in the registration process in the portal
+    - Why is my registration process not completed in the portal
+    - Why registration process not completed in portal
+    - Why registration process not successful in portal
+
+- intent: request_for_re-schedule_cat
+  examples: |
+    - Can we request for a re-schedule because we have school activity
+    - Can we re-schedule the cat because we have school program
+    - Can I re-schedule the can entrance exam because I was sick
+    - Can I re-schedule the cat exam because I forgot about it
+    - Can I re-schedule the cat entrance exam because I was not able to go
+    - It is ok to re-schedule cat exam because we have school activity
+    - It is ok to re-schedule cat exam because we have school program
+    - It is ok to re-schedule cat exam because I was sick
+    - It is ok to re-schedule cat exam because I forgot about it
+    - It is ok to re-schedule cat exam because there is an emergency at home and i was not able to go
+
+- intent: when_schedule_to_take_cat
+  examples: |
+    - When will be our schedule for the CAT
+    - When is the CAT schedule
+    - Schedule for CAT
+    - Schedule for entrance exam
+    - Schedule for college admission test
+    - When will I take the CAT
+    - When will I take the entrance exam
+    - When will I take the CAT exam
+    - When is my schedule for the CAT
+    - When is my schedule for the entrance exam
+
+- intent: enroll_without_cat
+  examples: |
+    - Can I still enroll even without CAT
+    - Can I still enroll even without College Admission Test
+    - Can I still enroll even though I did not take the college entrance exam
+    - Is it possible to enroll without taking CAT
+    - Can I enroll even though I did not take the CAT
+    - Can I enroll even though I did not take the College Admission Test
+    - Is it ok to enroll without taking the CAT
+    - Is it ok to enroll without taking the College Admission Test
+    - Is it ok to enroll without taking the entrance exam
+    - Can I still enroll even though I did not take the CAT
+     - Can I still enroll even though I did not take the entrance exam
+    - Can I still proceed to enrollment even though I did not take CAT
+    - I did not take CAT entrance exam. can i still enroll
+    
+
+- intent: register_manually_or_on-site
+  examples: |
+    - Can I register manually or on-site
+    - is onsite registration is allowed
+    - Can i go registration office to register
+    - can i go to college department to register
+    - I live in a remote area, can I register onsite instead
+    - I live in a remote area, can I register in CSU gonzaga campus instead 
+    - I live in a remote area, can I register in campus instead
+    - Can I register onsite in csu gonzaga campus
+    - Can i register manually in csu gonzaga campus
+    - Can I just go to the campus to register
+
+- intent: below_average_passing_rate
+  examples: |
+    - Can my child still enroll in BSIT even though they failed to meet the percentile
+    - Can my child still enroll in BSHM even though they failed to meet the percentile
+    - Can my child still enroll in BSA even though they failed to meet the percentile
+    - Can my child still enroll in BSCRIM even though they failed to meet the percentile
+    - Can my child still enroll in BEeD even though they failed to meet the percentile
+    - Can my child still enroll in BSAIS even though they failed to meet the percentile
+    - Can my child still enroll in IT even though they failed to meet the percentile
+    - Can my child still enroll in HM even though they failed to meet the percentile
+    - Can my child still enroll in Accounting even though they failed to meet the percentile
+    - Can my child still enroll in CRIM even though they failed to meet the percentile
+    - Can my child still enroll in Agriculture even though they failed to meet the percentile
+    - Can my child still enroll in Agri even though they failed to meet the percentile
+    - Can my child still enroll in Educ even though they failed to meet the percentile
+    - Can my child still enroll in IT even though they did not meet the passing rate
+    - Can my child still enroll in HM even though they did not meet the passing rate
+    - Can my child still enroll in CRIM even though they did not meet the passing rate
+    - Can my child still enroll in Educ even though they did not meet the passing rate
+    - Can my child still enroll in Agriculture even though they did not meet the passing rate
+    - Can my child still enroll in Agri even though they did not meet the passing rate
+  
+    
+    
+    
+    
+    
+
+- intent: submit_requirements_after_exam
+  examples: |
+    - can i still submit requirements after exam
+    - after exam submit requirements
+    - submit requirements after exam
+    - is it okay to submit requirements after exam
+    - where can i submit my requirements
+    - is late submission are allowed?
+    - who is incharge of collecting requirements
+    - can i submit my requirements via email
+    - can my mother submit my requirements
+
+- intent: take_exam_same_day_as_registration
+  examples: |
+    - Can I take the cat exam the same day after I register
+    - I want to take cat exam same day as the registration
+    - After registration, can I take the cat exam immediately
+    - Can i register then take the cat exam after
+    - Same day registration and cat exam
+    - Can i resister and take cat exam on the same day
+    - Will the cat exam be available on the same day after i register
+    - after registration, can i take the cat exam after in the same day
+    - is it ok for same day registration and cat exam
+    - can i take the cat exam immediately after registering
+
+- intent: know_the_cat_result
+  examples: |
+    - When will we know the result?
+    - the result of CAT
+    - CAT result when
+    - How will I know if I passed the CAT?
+    - Are the CAT results out?
+    - Has the CAT result has been posted?
+    - When will i get my CAT score
+    - Where can i check the CAT result
+    - Will the results be on the website of CSU gonzaga
+    - Do i need to log in to see my CAT result
+
+- intent: passing_rate_courses
+  examples: |
+    - What is the passing score for a specific course
+    - Do different programs have different passing score
+    - Is the passing rate the same for all courses?
+    - How high should my score be to qualify for [program]?
+    - What’s the minimum score needed for IT?
+    - What’s the minimum score needed for HM?
+    - What’s the minimum score needed for CRIM?
+    - What’s the minimum score needed for EDUC?
+    - What’s the minimum score needed for Accounting?
+    - What’s the minimum score needed for Agri?
+
+###########################Deans###########################################################
+- intent: CICS_dean
+  examples: |
+    - Who is the dean of CICS
+    - Who is the dean of BSIT
+    - CICS dean
+    - Dean of College of Information and computing Sciences
+    - College of Information and computing Sciences dean
+    - Dean of IT
+    - Dean of CICS
+    - Dean IT
+    - Dean of BSIT
+    - BSIT dean
+
+- intent: CA_dean
+  examples: |
+    - Who is the dean of CA 
+    - Who is the dean of Agriculture
+    - Who is the dean of Agri
+    - Who is the dean of College of Agriculture
+    - Dean of Agri
+    - Dean of CA
+    - Dean of College of Agriculture
+    - College of Agriculture dean
+    - CA dean
+
+- intent: CCJE_dean
+  examples: |
+    - Who is the dean of CCJE
+    - Who is the dean of Crim
+    - Who is the dean of College of Criminal Justice Education
+    - Dean of Criminology
+    - Dean of Crim
+    - Dean of CCJE
+    - Dean of College of Criminology
+    - College of Criminology dean
+    - CCJE dean
+    - Crim dean
+    - BSCRIM dean
+
+- intent: CBEA_dean
+  examples: |
+    - Who is the dean of CBEA
+    - Who is the dean of Accounting
+    - Who is the dean of College of Business Entrepreneurship and Accountancy
+    - Dean of CBEA
+    - Dean of Accounting
+    - Dean of College of Business Entrepreneurship and Accountancy
+    - College of Accounting dean
+    - College of Business Entrepreneurship and Accountancy dean
+    - CBEA dean
+    - BSAIS dean
+
+- intent: CHM_dean
+  examples: |
+    - Who is the dean of CHM
+    - Who is the dean of HM
+    - Who is the dean of College of Hospitality Management
+    - College of Hospitality Management dean
+    - Dean of CHM
+    - Dean of HM
+    - Dean of College of Hospitality Management
+    - HM dean
+    - CHM dean
+    - BSHM dean
+
+- intent: CTED_dean
+  examples: |
+    - Who is the dean of CTED
+    - Who is the dean of Education
+    - Who is the dean of Educ
+    - Who is the dean of College of Teacher Education
+    - Dean of Educ
+    - Dean of CTED
+    - Educ dean
+    - Dean of College of Teacher Education
+    - College of Teacher Education dean
+    - CTED dean
+    - BSED dean
+
+- intent: CSU_Deans
+  examples: |
+    - Who are the deans In CSU Gonzaga
+    - Cagayan State University Gonzaga Deans
+    - List of Deans in CSU Gonzaga
+    - Gonzaga Deans
+    - Deans of CSU
+    - Who are the Active Deans
+
+####May 28
+
+- intent: shift_course
+  examples: |
+    - How do I shift to another course?
+    - I want to shift my course, what should I do?
+    - What are the requirements to enroll as a shiftee?
+    - How to become a shiftee?
+    - How can I shift to a different college?
+    - shiftee process and requirements
+    - shifting to another course processes and requirements
+    - requirements to shift to another course
+    - how to shift to another course?
+    - i want to shift to another course, what are the requirements?
+
+- intent: transfer_school
+  examples: |
+    - What are the procedures to transfer to another school?
+    - How can I transfer to another university?
+    - What are the requirements for school transfer?
+    - I want to move to another university, what should I do?
+    - How do I start the process of transferring schools?
+    - transferring school requirements
+    - transferring school procedures
+    - how to transfer to another school
+    - how to transfer to another university
+    - transfer school requirements
+    - transfer school procedures
+
+- intent: guidance_office_hours
+  examples: |
+    - What are the office hours for the guidance office?
+    - When is the guidance office open?
+    - What is the guidance office working schedule?
+    - What time can I visit the guidance office?
+    - is the guidance office open on weekends?
+    - office hours of guidance office
+    - guidance office schedule
+    - what time is the guidance office available
+    - what time should i go to the guidance office
+    - guidance office office hours
+
+- intent: guidance_contact_info
+  examples: |
+    - guidance office contact info
+    - contact info of guidance office
+    - how to contact guidance office
+    - i need to talk to someone in guidance office
+    - i have an email for guidance office
+    - guidance office phone number
+    - guidance office email
+    - guidance office contact
+    - phone number of guidance
+    - email of guidance
+
+- intent: available_scholarships
+  examples: |
+    - What scholarships are available?
+    - Do you offer any scholarships?
+    - available scholarships in the campus
+    - scholarships available in csu gonzaga
+    - what scholarships are being offered in csu gonzaga
+    - are there any available scholarships in csu gonzaga
+    - scholarships available in csu gonzaga
+    - csu gonzaga scholarships
+    - i want to apply for a scholarship. are there any available?
+    - scholarship availability
+    - scholarships offered
+    - is csu gonzaga offering any scholarships
+
+- intent: tdp_tes_requirements
+  examples: |
+    - What are the requirements for a TDP scholarship?
+    - What are the requirements for a TES scholarship?
+    - How do I apply for a TDP?
+    - How do I apply for a TES?
+    - What do I need for the TDP scholarship?
+    - What do I need for the TES scholarship?
+    - What are the TDP scholarship requirements?
+    - What are the TES scholarship requirements?
+    - What documents do I need for TDP scholarship?
+    - What documents do I need for TES scholarship?
+    - Requirements for TDP scholarship
+    - Requirements for TES scholarship
+    - TDP requirements
+    - TES requirements
+    - How to avail TDP scholarship
+    - How to avail TES scholarship
+    - TDP
+    - TES
+    - TDP TES
+
+- intent: win_gatchalian_requirements
+  examples: |
+    - What are the requirements for kuya win gatchalian scholarship?
+    - How do I apply for kuya win gatchalian scholarship?
+    - What do I need for the kuya win gatchalian scholarship?
+    - What are the kuya win gatchalian scholarship requirements?
+    - What documents do I need for Kuya Win Gatchalian scholarship?
+    - Requirements for kuya win gatchalian scholarship?
+    - kuya win gatchalian requirements
+    - requirements for kuya win gatchalian scholarship
+    - documents needed for kuya win gatchalian
+    - how to avail kuya win gatchalian scholarship
+    - kuya win gatchalian
+    - win gatchalian
+    - gatchalian
+
+- intent: angara_requirements
+  examples: |
+    - What are the requirements for angara scholarship?
+    - How do I apply for angara scholarship?
+    - What do I need for the angara scholarship?
+    - What are the angara scholarship requirements?
+    - What documents do I need for angara scholarship?
+    - Requirements for Angara scholarship for new students?
+    - angara requirements
+    - angara scholarship requirements
+    - documents needed for angara scholarship
+    - angara
+
+- intent: affidavit_lost_id
+  examples: |
+    - How do I get an affidavit for a lost ID?
+    - What is the process for lost school ID?
+    - I lost my ID, how can I get a new one?
+    - Steps to get affidavit of lost ID?
+    - How much does the affidavit and ID cost?
+    - I lost my ID, what do I do to get a new ID?
+    - lost ID, need new ID
+    - how to file affidavit of lost ID?
+    - affidavit lost ID
+    - ID lost, I need to get a new one. how?
+    - lost ID affidavit procedures
+    - affidavit lost ID requirements
+    - lost ID payment fee
+
+- intent: osdw_office_hours
+  examples: |
+    - What are the office hours for OSDW?
+    - When is the OSDW office open?
+    - OSDW Office schedule?
+    - What time can I go to the OSDW office?
+    - osdw office hours
+    - office hours of osdw
+    - when can i go to osdw
+    - when to visit osdw
+    - open hours of osdw
+    - what time is the osdw open
+
+- intent: osdw_contact_info
+  examples: |
+    - osdw office contact info
+    - contact info of osdw office
+    - how to contact osdw office
+    - i need to talk to someone in osdw office
+    - i have an email for osdw office
+    - osdw office phone number
+    - osdw office email
+    - osdw office contact
+    - phone number of osdw
+    - email of osdw
+
+- intent: admission_office_hours
+  examples: |
+    - What are the office hours for admission office?
+    - When is the admission office open?
+    - admission Office schedule?
+    - What time can I go to the admission office?
+    - admission office hours
+    - office hours of admission office
+    - when can i go to admission office
+    - when to visit admission office
+    - open hours of admission office
+    - what time is the admission office open
+
+- intent: admission_contact_info
+  examples: |
+    - admission office contact info
+    - contact info of admission office
+    - how to contact admission office
+    - i need to talk to someone in admission office
+    - i have an email for admission office
+    - admission office phone number
+    - admission office email
+    - admission office contact
+    - phone number of admission
+    - email of admission
+
+#####
+
+- intent: what_is_cat
+  examples: |
+    - What is CAT?
+    - What does CAT stand for?
+    - CAT what is it
+    - CAT meaning
+    - CAT definition
+    - what CAT means
+    
+
+- intent: register_portal
+  examples: |
+    - How to register on the portal for new students?
+    - What is the admission registration process online?
+    - how to register for admission on the portal?
+    - online portal admission registration
+    - admission registration through online portal
+    - online portal registration
+    - register for admission on the portal
+    - How to register for admission on the portal for new students?
+    - register in online portal for admission
+    - process to register on online portal
+    - online portal
+    
+
+- intent: why_take_cat
+  examples: |
+    - Why take the CSU College Admission Test?
+    - Is CAT required?
+    - do I need to take the CAT
+    - is it necessary to take the CAT
+    - is it required to take the CAT
+    - is it ok to not take the CAT
+    - do i really need to take the CAT
+    - is CAT really required
+    - is CAT necessary
+    - is CAT really needed
+
+- intent: who_should_take_cat
+  examples: |
+    - Who should take the CAT?
+    - Who is qualified for the CSU admission test?
+    - CAT takers who
+    - who can take the CAT
+    - do incoming first year need to take the cat
+    - should incoming first year students take the cat
+    - who should CAT exam
+    - who should apply for CAT exam
+    - who is qualified for CAT
+    - who is qualified to take CAT
+
+- intent: when_is_cat
+  examples: |
+    - When is the CAT scheduled?
+    - What month is the entrance exam?
+    - when is CAT conducted
+    - when does CAT start
+    - when does CAT begin
+    - when does CAT end
+    - schedule of CAT exam
+    - what month is the beginning of CAT
+    - what month does CAT starts
+    - what month does CAT ends
+    - What month does CAT entrance exam starts
+
+- intent: where_is_cat
+  examples: |
+    - Where is the CAT test conducted?
+    - Which campuses give the entrance exam?
+    - where is the CAT entrance exam held
+    - what campus is cat entrance exam held
+    - Where will the CAT test be administered?
+    - Where will the CAT entrance exam be administered?
+    - where do they administer cat entrance exam
+    - where is the cat entrance exam conducted
+    - in what campus is cat entrance exam conducted
+    - cat entrance exam conducted at what camput
+    - where is the entrance exam being held
+
+- intent: is_registration_required
+  examples: |
+    - Is there a registration for CAT?
+    - When is the deadline for CAT registration?
+    - Is there a registration for the CAT test?
+    - Is there a registration for the CAT entrance exam?
+    - Is there a deadline for the CAT test?
+    - Is there a deadline for the CAT entrance exam?
+    - Is there a deadline for the CAT registration
+    - Is there a deadline for registration of CAT
+    - Is there a deadline for the CAT
+    - Is there a deadline for the CAT exam registration
+    
+
+- intent: where_to_register
+  examples: |
+    - Where do I register for CAT?
+    - CAT registration link?
+    - where to register CAT
+    - link for online registration of CAT
+    - link to register for CAT
+    - CAT registration online link
+    - CAT link
+    - online portal registration link
+    - online portal link
+    - link to register for CAT entrance exam
+
+- intent: is_there_fee
+  examples: |
+    - Is there a registration fee?
+    - Do I need to pay for the CAT?
+    - Is there a payment for taking the CAT
+    - is there a fee for cat
+    - is there a payment fee for cat
+    - do i need to pay to take the cat
+    - do i need to pay an examination fee
+    - is there an examination fee
+    - is there a cat examination fee
+    - is there an exam fee
+    - is there an exam payment fee
+
+- intent: can_choose_campus
+  examples: |
+    - Can I take the test in any campus?
+    - Can I choose a different campus to take the CAT?
+    - can i take the cat in another campus
+    - can i take the cat entrance exam in another campus
+    - can i take the entrance exam in any campus
+    - can i take the cat exam in any campus
+    - is it possible to take the cat in another campus
+    - is it possible to take the cat entrance exam in another campus
+    - can i choose a different campus to take the cat entrance exam
+    - cat entrance exam in another campus, is it possible
+    - is it ok to take the cat in different campus
+    - is it possible to take the cat in a different campus
+    - i chose csu gonzaga as my testing center but i want to take the cat in aparri campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in carig campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in lallo campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in andrews campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in lasam campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in piat campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in sanchez mira campus. is this ok
+    - i chose csu gonzaga as my testing center but i want to take the cat in solana campus. is this ok
+
+- intent: course_not_offered
+  examples: |
+    - What if the course I want is not in the campus I’ll take the test in?
+    - What if the course I wish to take up is not offered in the campus where I am to take the test?
+    - my preferred course is in another campus, can i still take the test in gonzaga
+    - my preferred program is not offered in this campus, can i still take the test here
+
+- intent: what_time_test
+  examples: |
+    - What time should I come on exam day?
+    - What is the call time for the entrance test?
+    - what time does the CAT begin
+    - CAT begins at what time
+    - Time CAT begins
+    - CAT time starts
+    - Call time for CAT entrance exam
+    - Call time for CAT
+    - what time does the cat starts
+    - what time should I go on the exam day
+    
+
+- intent: what_to_bring
+  examples: |
+    - What should I bring during the CAT?
+    - What do I need to bring on test day?
+    - what to bring during the CAT entrance exam
+    - what to bring during the CAT exam
+    - what to bring during the CAT
+    - what should i bring during the CAT entrance exam
+    - what should i bring during the CAT entrance exam
+    - what should i bring during the CAT entrance exam day
+    - what should i bring during the CAT day
+    - what should i bring during the CAT exam
+    
+
+- intent: how_many_items
+  examples: |
+    - How many items in CAT?
+    - What is the number of questions in the entrance exam?
+    - CAt exam how many items
+    - how many items is the cat entrance exam
+    - how many items is the cat exam
+    - how many items is the entrance exam
+    - how many items is the cat test
+    - number of questions in the cat entrance exam
+    - number of questions in the cat exam
+    - number of questions in the entrance exam
+    - number of questions in the cat
+    - number of items of CAT exam
+
+- intent: what_to_review
+  examples: |
+    - What subjects should I review for CAT?
+    - What topics are covered in the admission test?
+    - What subjects to review for entrance exam?
+    - What subjects to review for cat entrance exam?
+    - What subjects to review for cat exam?
+    - What subjects to review for cat?
+    - What subjects to review for cat test?
+    - What topics are covered in the admission test?
+    - What topics are covered in the cat test?
+    - What subjects are covered in the admission test?
+    - coverage of the cat
+    - coverage of the cat exam
+    - coverage of the cat test
+    - coverage of the cat entrance exam
+    - coverage of the college admission test
+    - what subjects to review for cat
+    - what subjects to review for cat exam
+    - what subjects to review for cat test
+    - what subjects to review for cat entrance exam
+    - what subjects to review for college admission test

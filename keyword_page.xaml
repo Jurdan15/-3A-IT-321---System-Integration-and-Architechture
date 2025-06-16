@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chatbot_Admin.keyword_page"
+             Title="Admin - Keywords"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label 
+            Text="Keyword Management" 
+            FontSize="24" 
+            TextColor="Black" 
+            HorizontalOptions="Center" 
+            Margin="0,20,0,10"/>
+            <Label 
+             Text="This page allows you to manage and assign keywords that categorize the user's inquiries. By adding relevant keywords (like scholarship, enrollment, admission, etc.), you help the system automatically group inquiries by topic." 
+             FontSize="17" 
+             TextColor="Black" 
+             HorizontalOptions="Center" 
+             HorizontalTextAlignment="Start"
+             VerticalTextAlignment="Start"
+             WidthRequest="820"
+                     />
+
+            <!-- New Grid with two columns -->
+            <Grid HorizontalOptions="Center" WidthRequest="850" ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Add New Keyword Frame -->
+                <Frame 
+                BackgroundColor="#F5F5F5" 
+                CornerRadius="10" 
+                Padding="15" 
+                WidthRequest="400"
+                Grid.Column="0">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Add New Keyword" FontSize="18" TextColor="Black"/>
+                        <Entry 
+                        x:Name="KeywordEntry" 
+                        Placeholder="Enter keyword..." 
+                        BackgroundColor="White" 
+                        TextColor="Black" 
+                        PlaceholderColor="Gray" 
+                        HeightRequest="50"
+                        FontSize="16"/>
+                        <Button 
+                        Text="Save Keyword"
+                        x:Name="SaveButton"
+                        BackgroundColor="#00f2ff"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        HeightRequest="50"
+                        Clicked="OnSaveButtonClicked"
+                        CornerRadius="10"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame 
+    BackgroundColor="Transparent" 
+    WidthRequest="400"
+    Grid.Column="1">
+
+                    <VerticalStackLayout Spacing="10" Padding="10">
+                        <Label 
+            Text="Existing Keywords" 
+            FontSize="20" 
+            TextColor="Black"
+            HorizontalOptions="Center"/>
+
+                        <CollectionView 
+            x:Name="KeywordsCollectionView"
+            ItemsLayout="VerticalList"
+            HeightRequest="400">
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame 
+                        Padding="10" 
+                        Margin="5"
+                        BackgroundColor="#F5F5F5"
+                        CornerRadius="8">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label 
+                                Text="{Binding Keyword}" 
+                                TextColor="Black" 
+                                FontSize="16"
+                                VerticalOptions="Center"/>
+                                            <Button 
+                                Grid.Column="1"
+                                Text="Delete" 
+                                BackgroundColor="#FF3C3C"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="5"
+                                Padding="10,0"
+                                Clicked="OnDeleteKeywordClicked"
+                                CommandParameter="{Binding Id}"/>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+
+            </Grid>
+
+            <Label
+            x:Name="StatusLabel"
+            Text=""
+            FontSize="14"
+            TextColor="Green"
+            HorizontalOptions="Center"
+            Margin="0,10,0,0"
+            />
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

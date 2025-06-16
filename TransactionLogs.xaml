@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.TransactionLogs"
+             Title="TransactionLogs">
+    <ScrollView>
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <!-- Title -->
+        <Label Text="Transaction Logs"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+               Margin="0,20,0,0"/>
+
+        <!-- Description -->
+        <Label Text="The chart below shows how many users have used the chatbot for today, this week, or this month."
+               FontSize="17"
+               TextColor="Black"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Center"
+               Grid.Row="1"
+               Margin="20,10,20,0"/>
+
+        <!-- Chart -->
+        <chart:ChartView x:Name="BarChartView"
+                         HeightRequest="400"
+                         WidthRequest="400"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"
+                         Grid.Row="2"/>
+
+            <StackLayout Grid.Row="3" Spacing="10" HorizontalOptions="Center">
+                <Button Text="Reload Statistics"
+            Clicked="OnReloadStatisticsClicked"
+            BackgroundColor="Aqua"
+            TextColor="Black"
+            FontAttributes="Bold"
+            WidthRequest="200"
+            HeightRequest="50"
+            CornerRadius="12"/>
+
+                <Button Text="See Table"
+            Clicked="OnTableClicked"
+            BackgroundColor="Aqua"
+            TextColor="Black"
+            FontAttributes="Bold"
+            WidthRequest="200"
+            HeightRequest="50"
+            CornerRadius="12"/>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

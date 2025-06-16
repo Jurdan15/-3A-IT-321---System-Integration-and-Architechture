@@ -1,0 +1,158 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.PerformanceBreakdown"
+             Title="Performance Breakdown">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="40" HorizontalOptions="Center">
+
+            <!-- TODAY Section -->
+            <Label Text="Performance Ratings: Today"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Grid Margin="0,10" HorizontalOptions="Center" VerticalOptions="Center" ColumnSpacing="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350" />
+                    <!-- Pie Chart fixed width -->
+                    <ColumnDefinition Width="Auto" />
+                    <!-- Legend -->
+                </Grid.ColumnDefinitions>
+
+                <chart:ChartView x:Name="PieChartToday"
+                                 HeightRequest="350"
+                                 WidthRequest="350"
+                                 Grid.Column="0"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center" />
+
+                <ListView x:Name="RatingListViewToday"
+                          HasUnevenRows="true"
+                          SeparatorVisibility="None"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          WidthRequest="350"
+                          BackgroundColor="Transparent"
+                          IsEnabled="False"
+                          Grid.Column="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Color="{Binding Color}" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" CornerRadius="3"/>
+                                    <Label Text="{Binding Label}" Grid.Column="1" FontSize="16" HorizontalOptions="StartAndExpand" LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Percentage}" Grid.Column="2" FontSize="16" HorizontalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <!-- THIS WEEK Section -->
+            <Label Text="Performance Ratings: This Week"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Grid Margin="0,10" HorizontalOptions="Center" VerticalOptions="Center" ColumnSpacing="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <chart:ChartView x:Name="PieChartWeek"
+                                 HeightRequest="350"
+                                 WidthRequest="350"
+                                 Grid.Column="0"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center" />
+
+                <ListView x:Name="RatingListViewWeek"
+                          HasUnevenRows="true"
+                          SeparatorVisibility="None"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          WidthRequest="350"
+                          BackgroundColor="Transparent"
+                          IsEnabled="False"
+                          Grid.Column="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Color="{Binding Color}" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" CornerRadius="3"/>
+                                    <Label Text="{Binding Label}" Grid.Column="1" FontSize="16" HorizontalOptions="StartAndExpand" LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Percentage}" Grid.Column="2" FontSize="16" HorizontalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <!-- THIS MONTH Section -->
+            <Label Text="Performance Ratings: This Month"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Grid Margin="0,10" HorizontalOptions="Center" VerticalOptions="Center" ColumnSpacing="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <chart:ChartView x:Name="PieChartMonth"
+                                 HeightRequest="350"
+                                 WidthRequest="350"
+                                 Grid.Column="0"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center" />
+
+                <ListView x:Name="RatingListViewMonth"
+                          HasUnevenRows="true"
+                          SeparatorVisibility="None"
+                          VerticalOptions="Center"
+                          HorizontalOptions="StartAndExpand"
+                          WidthRequest="350"
+                          BackgroundColor="Transparent"
+                          IsEnabled="False"
+                          Grid.Column="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Color="{Binding Color}" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" CornerRadius="3"/>
+                                    <Label Text="{Binding Label}" Grid.Column="1" FontSize="16" HorizontalOptions="StartAndExpand" LineBreakMode="TailTruncation" />
+                                    <Label Text="{Binding Percentage}" Grid.Column="2" FontSize="16" HorizontalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

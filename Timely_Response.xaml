@@ -1,0 +1,55 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.Timely_Response"
+             Title="Response Timeliness">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Response Timeliness"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"/>
+
+        <Label Text="The pie chart below shows the percentages/ratings for the question: Did you receive a timely response?"
+               FontSize="17"
+               TextColor="Black"
+               HorizontalTextAlignment="Start"
+               WidthRequest="600"/>
+
+        <!-- Centered layout for chart and legend -->
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="40">
+            <chart:ChartView x:Name="PieChartView"
+                             HeightRequest="400"
+                             WidthRequest="400"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"/>
+
+            <VerticalStackLayout Spacing="12"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 x:Name="LegendPanel" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" Margin="0,15,0,0">
+            <Button Text="Reload Statistics"
+                    Clicked="OnReloadStatisticsClicked"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    CornerRadius="12" />
+
+            <Button Text="Timely Response Breakdown"
+                    Clicked="OnBreakdownClicked"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="250"
+                    HeightRequest="50"
+                    CornerRadius="12" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

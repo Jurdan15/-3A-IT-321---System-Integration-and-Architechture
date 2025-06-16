@@ -1,0 +1,90 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.PerformanceRating"
+             Title="Performance Rating">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header Section -->
+        <VerticalStackLayout Grid.Row="0" Spacing="15">
+            <Label Text="Chatbot's Performance Rating"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0" />
+            <Label Text="The pie chart below shows the percentages of the ratings of the user on the overall performance of the chatbot."
+                   FontSize="17"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="600" />
+        </VerticalStackLayout>
+
+        <!-- Centered Chart + Legend Section -->
+        <HorizontalStackLayout Grid.Row="1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Spacing="30"
+                               Margin="0,20">
+            <chart:ChartView x:Name="PieChartView"
+                             HeightRequest="350"
+                             WidthRequest="350"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center" />
+
+            <ListView x:Name="RatingListView"
+                      HasUnevenRows="true"
+                      SeparatorVisibility="None"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Start"
+                      WidthRequest="260"
+                      BackgroundColor="Transparent"
+                      IsEnabled="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <BoxView Color="{Binding Color}" WidthRequest="15" HeightRequest="15" VerticalOptions="Center" CornerRadius="3"/>
+                                <Label Text="{Binding Label}" Grid.Column="1" FontSize="16" />
+                                <Label Text="{Binding Percentage}" Grid.Column="2" FontSize="16" HorizontalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </HorizontalStackLayout>
+
+        <!-- Buttons Section -->
+        <StackLayout Grid.Row="2" Spacing="10" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Button Text="Reload Statistics"
+                    Clicked="OnReloadStatisticsClicked"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    CornerRadius="12"/>
+
+            <Button Text="Performance Rating Breakdown"
+                    Clicked="OnBreakdownClicked"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="250"
+                    HeightRequest="50"
+                    CornerRadius="12"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

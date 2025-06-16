@@ -1,0 +1,106 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.statistics"
+             Title="Inquiry Category Distribution">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header Section -->
+        <VerticalStackLayout Grid.Row="0" Spacing="15">
+            <Label Text="Inquiry Category Distribution"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0" />
+            <Label Text="The pie chart below shows the percentages of the categories of inquiries that users ask."
+                   FontSize="17"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="600" />
+        </VerticalStackLayout>
+
+        <!-- Main Content Section: Pie + List -->
+        <HorizontalStackLayout Grid.Row="1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Spacing="30"
+                               Margin="0,20">
+            <!-- Pie Chart -->
+            <chart:ChartView x:Name="PieChartView"
+                             HeightRequest="350"
+                             WidthRequest="350"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center" />
+
+            <!-- ListView -->
+            <ListView x:Name="KeywordListView"
+                      HasUnevenRows="true"
+                      SeparatorVisibility="None"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Start"
+                      WidthRequest="260"
+                      BackgroundColor="Transparent"
+                      IsEnabled="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="8" ColumnSpacing="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <BoxView Grid.Column="0"
+                                         WidthRequest="15"
+                                         HeightRequest="15"
+                                         VerticalOptions="Center"
+                                         CornerRadius="3"
+                                         Color="{Binding ColorHex}" />
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding Key}"
+                                       FontSize="16"
+                                       VerticalOptions="Center" />
+
+                                <Label Grid.Column="2"
+                                       Text="{Binding Value}"
+                                       FontSize="16"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </HorizontalStackLayout>
+
+        <!-- Buttons -->
+        <StackLayout Grid.Row="2" Spacing="10" HorizontalOptions="Center" Margin="0,20,0,0">
+            <Button Text="Reload Statistics"
+                    Clicked="OnReloadStatisticsClicked"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    CornerRadius="12"/>
+
+            <Button Text="Inquiry Category Breakdown"
+                    Clicked="OnBreakdownClicked"
+                    BackgroundColor="Aqua"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    WidthRequest="250"
+                    HeightRequest="50"
+                    CornerRadius="12"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

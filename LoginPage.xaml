@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Chatbot_Admin.LoginPage"
+    Title="Login">
+
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+
+        <!-- Logo -->
+        <Image Source="logo.png"
+               HeightRequest="250"
+               WidthRequest="250"
+               HorizontalOptions="Center"/>
+
+        <!-- Welcome Text -->
+        <Label Text="Welcome Back," 
+               FontSize="40"
+               FontAttributes="Bold"
+               FontFamily="arial"
+               HorizontalOptions="Center"
+               TextColor="Black" />
+
+        <Label Text="Admin!"
+               TextColor="Maroon"
+               FontFamily="arial"
+               FontSize="40"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <!-- Password Entry (Wider) -->
+        <Entry x:Name="PasswordEntry"
+               Placeholder="Password"
+               IsPassword="True" 
+               FontSize="24"
+               FontAttributes="Bold"
+               WidthRequest="300"
+               HorizontalOptions="Center"/>
+
+        <!-- Login Button (Wider) -->
+        <Button Text="Login"
+                BackgroundColor="Green"
+                TextColor="White"
+                CornerRadius="5"
+                FontSize="24"
+                FontAttributes="Bold"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                Clicked="OnLoginClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

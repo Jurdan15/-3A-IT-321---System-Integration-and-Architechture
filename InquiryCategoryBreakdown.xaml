@@ -1,0 +1,148 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Chatbot_Admin.InquiryCategoryBreakdown"
+             Title="Inquiry Category Breakdown">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="40">
+
+            <Button Text="Print to PDF"
+                    Clicked="OnPrintToPdfClicked"
+                    BackgroundColor="#007ACC"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"/>
+
+            <!-- TODAY -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Today's Inquiry Distribution"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <chart:ChartView x:Name="TodayPieChart"
+                                 HeightRequest="300"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center" />
+
+                <ListView x:Name="TodayKeywordListView"
+                          HasUnevenRows="true"
+                          SeparatorVisibility="None"
+                          WidthRequest="280"
+                          BackgroundColor="Transparent"
+                          IsEnabled="False">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="8" ColumnSpacing="8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Grid.Column="0" WidthRequest="15" HeightRequest="15"
+                                             VerticalOptions="Center" CornerRadius="3"
+                                             Color="{Binding ColorHex}" />
+                                    <Label Grid.Column="1" Text="{Binding Key}" FontSize="16"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="2" Text="{Binding Value}" FontSize="16"
+                                           VerticalOptions="Center" HorizontalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+
+            <!-- THIS WEEK -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="This Week's Inquiry Distribution"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <chart:ChartView x:Name="WeekPieChart"
+                                 HeightRequest="300"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center" />
+
+                <ListView x:Name="WeekKeywordListView"
+                          HasUnevenRows="true"
+                          SeparatorVisibility="None"
+                          WidthRequest="280"
+                          BackgroundColor="Transparent"
+                          IsEnabled="False">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="8" ColumnSpacing="8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Grid.Column="0" WidthRequest="15" HeightRequest="15"
+                                             VerticalOptions="Center" CornerRadius="3"
+                                             Color="{Binding ColorHex}" />
+                                    <Label Grid.Column="1" Text="{Binding Key}" FontSize="16"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="2" Text="{Binding Value}" FontSize="16"
+                                           VerticalOptions="Center" HorizontalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+
+            <!-- THIS MONTH -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="This Month's Inquiry Distribution"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <chart:ChartView x:Name="MonthPieChart"
+                                 HeightRequest="300"
+                                 WidthRequest="300"
+                                 HorizontalOptions="Center" />
+
+                <ListView x:Name="MonthKeywordListView"
+                          HasUnevenRows="true"
+                          SeparatorVisibility="None"
+                          WidthRequest="280"
+                          BackgroundColor="Transparent"
+                          IsEnabled="False">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="8" ColumnSpacing="8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <BoxView Grid.Column="0" WidthRequest="15" HeightRequest="15"
+                                             VerticalOptions="Center" CornerRadius="3"
+                                             Color="{Binding ColorHex}" />
+                                    <Label Grid.Column="1" Text="{Binding Key}" FontSize="16"
+                                           VerticalOptions="Center" />
+                                    <Label Grid.Column="2" Text="{Binding Value}" FontSize="16"
+                                           VerticalOptions="Center" HorizontalOptions="End" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,139 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chatbot_Admin.Admin_Dashboard"
+             Title="Welcome Page"
+             BackgroundColor="#FFFFFF">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="40" 
+            Padding="30"
+            VerticalOptions="Center">
+
+            <Image Source="logo.png" 
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   HorizontalOptions="Center"/>
+
+            <Label 
+                Text="THE CSU-GONZAGA INQUIRY ASSISTANCE CHATBOT"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#2C3E50"
+                HorizontalTextAlignment="Center"/>
+
+            <!-- Button Grid Layout -->
+            <VerticalStackLayout Spacing="30" HorizontalOptions="Center">
+
+                <!-- Top Row: 3 buttons with 30px spacing -->
+                <HorizontalStackLayout Spacing="30">
+                    <Button 
+                        Text="Inquiry Category Distribution"
+                        BackgroundColor="#800001"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="20"
+                        HeightRequest="50"
+                        WidthRequest="300"
+                        Clicked="OnstatisticsClicked"/>
+
+                    <Button 
+                        Text="Overall Performance"
+                        BackgroundColor="#800001"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="20"
+                        HeightRequest="50"
+                        WidthRequest="300"
+                        Clicked="OnPerformanceRatingClicked"/>
+
+                    <Button 
+                        Text="Response Timeliness"
+                        BackgroundColor="#800001"
+                        TextColor="White"
+                        FontSize="18"
+                        CornerRadius="20"
+                        HeightRequest="50"
+                        WidthRequest="300"
+                        Clicked="OntimelyresponseClicked"/>
+                </HorizontalStackLayout>
+
+                <!-- Bottom Row: 2 buttons with 30px spacing, centered -->
+                <Grid HorizontalOptions="Center">
+                    <HorizontalStackLayout Spacing="30">
+                        <Button 
+                            Text="Inquiry Satisfaction"
+                            BackgroundColor="#800001"
+                            TextColor="White"
+                            FontSize="18"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            WidthRequest="300"
+                            Clicked="OnfullyansweredClicked"/>
+
+                        <Button 
+                            Text="Add Keywords"
+                            BackgroundColor="#800001"
+                            TextColor="White"
+                            FontSize="18"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            WidthRequest="300"
+                            Clicked="Onkeywords"/>
+
+                        <Button 
+      Text="Transaction Logs"
+      BackgroundColor="#800001"
+      TextColor="White"
+      FontSize="18"
+      CornerRadius="20"
+      HeightRequest="50"
+      WidthRequest="300"
+      Clicked="OnTransactionLogs"/>
+
+                    </HorizontalStackLayout>
+                </Grid>
+
+                <Grid HorizontalOptions="Center">
+                    <HorizontalStackLayout Spacing="30">
+                        <Button 
+            Text="Response Logs"
+            BackgroundColor="#800001"
+            TextColor="White"
+            FontSize="18"
+            CornerRadius="20"
+            HeightRequest="50"
+            WidthRequest="300"
+            Clicked="OnResponseLogs"/>
+
+                        <!-- New Middle Button -->
+                        <Button 
+            Text="View Raw Logs"
+            BackgroundColor="#800001"
+            TextColor="White"
+            FontSize="18"
+            CornerRadius="20"
+            HeightRequest="50"
+            WidthRequest="300"
+            Clicked="OnViewRawLogs"/>
+
+                        <Button 
+            Text="Logout" 
+            Clicked="OnLogoutClicked" 
+            BackgroundColor="#800001"
+            TextColor="White"
+            FontSize="18"
+            CornerRadius="20"
+            HeightRequest="50"
+            WidthRequest="300"/>
+                    </HorizontalStackLayout>
+                </Grid>
+
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

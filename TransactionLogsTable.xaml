@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Chatbot_Admin.TransactionLogsTable"
+             Title="Transaction Logs">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15" WidthRequest="700">
+
+        <Label Text="Transaction Logs Table"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <CollectionView x:Name="LogsCollectionView" Margin="0,10">
+            <CollectionView.Header>
+                <Grid Padding="5" BackgroundColor="#E0E0E0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="ID" FontAttributes="Bold" Grid.Column="0" Padding="10,0"/>
+                    <Label Text="Description" FontAttributes="Bold" Grid.Column="1" Padding="10,0"/>
+                    <Label Text="Timestamp" FontAttributes="Bold" Grid.Column="2" Padding="10,0"/>
+                </Grid>
+            </CollectionView.Header>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding ID}" Grid.Column="0" Padding="10,0"/>
+                        <Label Text="{Binding Description}" Grid.Column="1" Padding="10,0"/>
+                        <Label Text="{Binding Timestamp}" Grid.Column="2" Padding="10,0"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Refresh Table"
+                Clicked="OnReloadLogsClicked"
+               BackgroundColor="Aqua"
+TextColor="Black"
+FontAttributes="Bold"
+HorizontalOptions="Center"
+WidthRequest="200"
+HeightRequest="50"
+CornerRadius="12"
+Grid.Row="3"
+Margin="0,20,0,20"/>
+
+        
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

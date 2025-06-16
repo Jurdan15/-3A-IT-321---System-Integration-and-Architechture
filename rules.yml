@@ -1,0 +1,434 @@
+version: "3.1"
+
+rules:
+- rule: Fallback response
+  steps:
+  - intent: nlu_fallback
+  - action: utter_fallback
+
+- rule: scholarship__
+  steps:
+  - intent: scholarship
+  - action: utter_scholarship
+
+- rule: Respond to enrollment requirement inquiry
+  steps:
+    - intent: ask_enrollment_requirements
+    - action: action_ask_student_type
+
+
+- rule: Enrollment requirements path
+  steps:
+    - intent: requirements_for_enrollment
+    - action: action_ask_student_type
+
+- rule: Handle student type response
+  steps:
+    - intent: inform_student_type
+    - action: action_give_requirements
+
+- rule: Ask for OTR issuance type
+  steps:
+    - intent: otr
+    - action: action_ask_otr_issuance_type
+
+- rule: Provide OTR requirements
+  steps:
+    - intent: inform_otr_issuance_type
+    - action: action_give_otr_requirements
+
+- rule: Respond to greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Respond to goodbyes
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to affirmations
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Respond to denials
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: Respond to thanks
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- rule: Respond to bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: respond to bad words
+  steps:
+    - intent: bad_words
+    - action: utter_badwords_response
+#########Registrar#######################
+
+
+
+
+- rule: Handle student type response
+  steps:
+    - intent: inform_student_type
+    - action: action_give_requirements
+
+
+- rule: cog
+  steps:
+    - intent: issuance_of_certificate_of_grades
+    - action: utter_cog
+
+- rule: cav
+  steps:
+    - intent: cav
+    - action: utter_cav
+
+- rule: re_issuance_diploma
+  steps:
+    - intent: re_issuance_of_diploma
+    - action: utter_re_issuance_of_diploma
+
+- rule: ADDING_CANCELLING_DROPPING OF SUBJECTS
+  steps:
+    - intent: ADDING_CANCELLING_DROPPING OF SUBJECTS
+    - action: utter_add_drop_cancel
+
+- rule: RECTIFICATION OF GRADES
+  steps:
+    - intent: rectification_of_grades
+    - action: utter_rectification_of_grades
+
+- rule: completion_of_grades
+  steps:
+    - intent: completion_of_grades
+    - action: utter_completion_grades
+
+- rule: dropping out
+  steps:
+    - intent: dropping_out
+    - action: utter_drop_out
+
+- rule: honorable dismissal
+  steps:
+    - intent: honorable_dismissal
+    - action:  utter_honorable_dismissal
+
+- rule: respond to open programs
+  steps:
+    - intent: open_programs_for_new_students
+    - action: utter_open_programs
+
+- rule: respond to admission process
+  steps:
+    - intent: admission_process
+    - action: utter_admission_process
+
+##########guidance######################
+- rule: respond to counseling
+  steps:
+    - intent: Counseling_concerns
+    - action: utter_counselling
+
+- rule: respond to good moral
+  steps:
+    - intent: Good_Moral
+    - action: utter_good_moral
+
+
+##########osdw###############
+
+
+- rule: student_assistantship
+  steps:
+    - intent: student_assistantship
+    - action: utter_student_assistantship
+
+- rule: ra_9547
+  steps:
+    - intent: special_program_ra_9547
+    - action: utter_ra_9547
+
+- rule: signing of clearance
+  steps:
+    - intent: signing_of_clearance
+    - action: utter_signing_of_clearance
+
+##May 15
+- rule: is grade completed
+  steps:
+    - intent: if_grade_is_completed
+    - action: utter_grades_completed
+
+- rule: forgotten gbs password
+  steps:
+    - intent: password_in_gbs
+    - action: utter_grades_completed
+
+- rule: how to get student id
+  steps:
+    - intent: student_id
+    - action: utter_student_id
+
+- rule: professor for the course/subject
+  steps:
+    - intent: professor_of_our_courses
+    - action: utter_professor_of_our_courses
+
+- rule: re-schedule of the CAT exam
+  steps:
+    - intent: re-schedule_exam
+    - action: utter_re-schedule_exam
+
+- rule: release date for cat result
+  steps:
+    - intent: releasing_cat_result
+    - action: utter_releasing_cat_result
+
+- rule: cannot register in online portal
+  steps:
+    - intent: cannot_register_online_portal
+    - action: utter_cannot_register_online_portal
+
+- rule: average passing rate
+  steps:
+    - intent: average_passing_rate
+    - action: utter_average_passing_rate
+
+- rule: registration process cannot be completed
+  steps:
+    - intent: cannot_complete_registration_process
+    - action: utter_cannot_complete_registration_process
+
+- rule: request for re-schedule CAT
+  steps:
+    - intent: request_for_re-schedule_cat
+    - action: utter_request_for_re-schedule_cat
+
+- rule: schedule to take CAT
+  steps:
+    - intent: when_schedule_to_take_cat
+    - action: utter_when_schedule_to_take_cat
+
+- rule: enroll without CAT
+  steps:
+    - intent: enroll_without_cat
+    - action: utter_enroll_without_cat
+
+- rule: register manually or on-site
+  steps:
+    - intent: register_manually_or_on-site
+    - action: utter_register_manually_or_on-site
+
+- rule: below average passing rate
+  steps:
+    - intent: below_average_passing_rate
+    - action: utter_below_average_passing_rate
+
+- rule: submit requirements after exam
+  steps:
+    - intent: submit_requirements_after_exam
+    - action: utter_submit_requirements_after_exam
+
+- rule: take_exam_same_day_as_registration
+  steps:
+    - intent: take_exam_same_day_as_registration
+    - action: utter_take_exam_same_day_as_registration
+
+- rule:  know the result
+  steps:
+    - intent:  know_the_cat_result
+    - action: utter_know_the_cat_result
+
+- rule: passing rates for courses
+  steps:
+    - intent: passing_rate_courses
+    - action: utter_passing_rate_courses
+
+###deans###
+- rule: cics dean
+  steps:
+    - intent: CICS_dean
+    - action: utter_CICS_dean
+
+- rule: ca dean
+  steps:
+    - intent: CA_dean
+    - action: utter_CA_dean
+
+- rule: ccje dean
+  steps:
+    - intent: CCJE_dean
+    - action: utter_CCJE_dean
+
+- rule: cbea dean
+  steps:
+    - intent: CBEA_dean
+    - action: utter_CBEA_dean
+
+- rule: chm dean
+  steps:
+    - intent: CHM_dean
+    - action: utter_CHM_dean
+
+- rule: cted dean
+  steps:
+    - intent: CTED_dean
+    - action: utter_CTED_dean
+
+- rule: CSU deans
+  steps:
+    - intent: CSU_Deans
+    - action: utter_CSU_deans
+
+######May 28
+
+- rule: shift course
+  steps:
+    - intent: shift_course
+    - action: utter_shift_course
+
+- rule: transfer school
+  steps:
+    - intent: transfer_school
+    - action: utter_transfer_school
+
+- rule: guidance office hours
+  steps:
+    - intent: guidance_office_hours
+    - action: utter_guidance_office_hours
+
+- rule: guidance contact info
+  steps:
+    - intent: guidance_contact_info
+    - action: utter_guidance_contact_info
+
+- rule: available scholarships
+  steps:
+    - intent: available_scholarships
+    - action: utter_available_scholarships
+
+- rule: tdp tes scholarship requirements
+  steps:
+    - intent: tdp_tes_requirements
+    - action: utter_tdp_tes_requirements
+
+- rule: kuya win gatchalian scholarship requirements
+  steps:
+    - intent: win_gatchalian_requirements
+    - action: utter_win_gatchalian_requirements
+
+- rule: angara scholarship requirements
+  steps:
+    - intent: angara_requirements
+    - action: utter_angara_requirements
+
+- rule: affidavit lost id
+  steps:
+    - intent: affidavit_lost_id
+    - action: utter_affidavit_lost_id
+
+- rule: osdw office hours
+  steps:
+    - intent: osdw_office_hours
+    - action: utter_osdw_office_hours
+
+- rule: osdw contact info
+  steps:
+    - intent: osdw_contact_info
+    - action: utter_osdw_contact_info
+
+- rule: admission office hours
+  steps:
+    - intent: admission_office_hours
+    - action: utter_admission_office_hours
+
+- rule: admission contact info
+  steps:
+    - intent: admission_contact_info
+    - action: utter_admission_contact_info
+
+######
+
+- rule: Answer what is CAT
+  steps:
+  - intent: what_is_cat
+  - action: utter_what_is_cat
+
+- rule: Provide portal registration steps
+  steps:
+  - intent: register_portal
+  - action: utter_register_portal
+
+- rule: Explain why CAT is needed
+  steps:
+  - intent: why_take_cat
+  - action: utter_why_take_cat
+
+- rule: Who should take CAT
+  steps:
+  - intent: who_should_take_cat
+  - action: utter_who_should_take_cat
+
+- rule: When is CAT conducted
+  steps:
+  - intent: when_is_cat
+  - action: utter_when_is_cat
+
+- rule: Where is CAT held
+  steps:
+  - intent: where_is_cat
+  - action: utter_where_is_cat
+
+- rule: Registration requirements
+  steps:
+  - intent: is_registration_required
+  - action: utter_is_registration_required
+
+- rule: Provide registration link
+  steps:
+  - intent: where_to_register
+  - action: utter_where_to_register
+
+- rule: CAT is free
+  steps:
+  - intent: is_there_fee
+  - action: utter_is_there_fee
+
+- rule: Can test in other campus?
+  steps:
+  - intent: can_choose_campus
+  - action: utter_can_choose_campus
+
+- rule: Course not offered in test campus
+  steps:
+  - intent: course_not_offered
+  - action: utter_course_not_offered
+
+- rule: CAT test day timing
+  steps:
+  - intent: what_time_test
+  - action: utter_what_time_test
+
+- rule: CAT test day checklist
+  steps:
+  - intent: what_to_bring
+  - action: utter_what_to_bring
+
+- rule: CAT items
+  steps:
+  - intent: how_many_items
+  - action: utter_how_many_items
+
+- rule: CAT subjects to review
+  steps:
+  - intent: what_to_review
+  - action: utter_what_to_review

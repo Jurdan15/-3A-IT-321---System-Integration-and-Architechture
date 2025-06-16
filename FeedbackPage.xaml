@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="bot.FeedbackPage"
+    Title="Feedback"
+    BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ContentPage.Resources>
+        <Color x:Key="SelectedStarColor">#FFD700</Color>
+        <Color x:Key="UnselectedStarColor">#D3D3D3</Color>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15"
+                             WidthRequest="500"
+                             HorizontalOptions="Center">
+
+            <Label Text="We'd love to hear your feedback on how we served you today!"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource TextColor}"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Star Rating -->
+            <HorizontalStackLayout x:Name="StarsContainer" HorizontalOptions="Center" Spacing="15">
+                <Grid x:Name="Star1">
+                    <Path Data="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2 9.19,8.63 2,9.24l5.46,4.73L5.82,21z"
+                          Fill="{StaticResource UnselectedStarColor}"
+                          Stroke="Black"
+                          StrokeThickness="1"
+                          WidthRequest="40"
+                          HeightRequest="40">
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="1" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                </Grid>
+                <Grid x:Name="Star2">
+                    <Path Data="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2 9.19,8.63 2,9.24l5.46,4.73L5.82,21z"
+                          Fill="{StaticResource UnselectedStarColor}"
+                          Stroke="Black"
+                          StrokeThickness="1"
+                          WidthRequest="40"
+                          HeightRequest="40">
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="2" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                </Grid>
+                <Grid x:Name="Star3">
+                    <Path Data="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2 9.19,8.63 2,9.24l5.46,4.73L5.82,21z"
+                          Fill="{StaticResource UnselectedStarColor}"
+                          Stroke="Black"
+                          StrokeThickness="1"
+                          WidthRequest="40"
+                          HeightRequest="40">
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="3" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                </Grid>
+                <Grid x:Name="Star4">
+                    <Path Data="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2 9.19,8.63 2,9.24l5.46,4.73L5.82,21z"
+                          Fill="{StaticResource UnselectedStarColor}"
+                          Stroke="Black"
+                          StrokeThickness="1"
+                          WidthRequest="40"
+                          HeightRequest="40">
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="4" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                </Grid>
+                <Grid x:Name="Star5">
+                    <Path Data="M12,17.27L18.18,21l-1.64-7.03L22,9.24l-7.19-.61L12,2 9.19,8.63 2,9.24l5.46,4.73L5.82,21z"
+                          Fill="{StaticResource UnselectedStarColor}"
+                          Stroke="Black"
+                          StrokeThickness="1"
+                          WidthRequest="40"
+                          HeightRequest="40">
+                        <Path.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnStarTapped" CommandParameter="5" />
+                        </Path.GestureRecognizers>
+                    </Path>
+                </Grid>
+            </HorizontalStackLayout>
+
+            <!-- Timely -->
+            <Label Text="Did you get a timely response?" TextColor="{StaticResource TextColor}" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <RadioButton Content="😊" FontSize="30" GroupName="timely" Value="Yes" CheckedChanged="OnTimelyResponseChanged"/>
+                <RadioButton Content="😞" FontSize="30" GroupName="timely" Value="No" CheckedChanged="OnTimelyResponseChanged"/>
+                <RadioButton Content="😐" FontSize="30" GroupName="timely" Value="Somewhat" CheckedChanged="OnTimelyResponseChanged"/>
+            </HorizontalStackLayout>
+
+            <!-- Fully answered -->
+            <Label Text="Were your queries fully answered?" TextColor="{StaticResource TextColor}" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <RadioButton Content="😊" FontSize="30" GroupName="answered" Value="Yes" CheckedChanged="OnFullyAnsweredChanged"/>
+                <RadioButton Content="😞" FontSize="30" GroupName="answered" Value="No" CheckedChanged="OnFullyAnsweredChanged"/>
+                <RadioButton Content="😐" FontSize="30" GroupName="answered" Value="Somewhat" CheckedChanged="OnFullyAnsweredChanged"/>
+            </HorizontalStackLayout>
+
+            <!-- Comments -->
+            <Editor x:Name="CommentsEditor"
+                    Placeholder="Other comments or questions?"
+                    HeightRequest="100"
+                    BackgroundColor="{StaticResource EntryBackgroundColor}"
+                    TextColor="{StaticResource EntryTextColor}" />
+
+            <!-- Submit -->
+            <Button Text="Submit" Clicked="OnSubmitFeedback"
+                    BackgroundColor="{StaticResource EntryBackgroundColor}"
+                    TextColor="{StaticResource EntryTextColor}"/>
+
+            <!-- Chat ended label -->
+            <Label x:Name="ChatEndedLabel"
+                   Text="Chat ended."
+                   FontSize="12"
+                   TextColor="{StaticResource SecondaryTextColor}"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="False" />
+
+            <!-- End session buttons -->
+            <VerticalStackLayout Spacing="10" IsVisible="False" x:Name="EndButtonsContainer">
+                <Button x:Name="RestartChatButton" Text="Start Chat Again" Clicked="OnRestartChat"/>
+                <Button x:Name="ExitButton" Text="Exit" Clicked="OnExitButtonClicked"/>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,753 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thank
+  - bot_challenge
+  - badwords
+  - requirements_for_enrollment
+  - open_programs_for_new_students
+  - Counseling_concerns
+  - admission_process
+  - inform_student_type
+  - otr
+  - inform_otr_issuance_type
+  - issuance_of_certificate_of_grades
+  - cav
+  - re_issuance_of_diploma
+  - ADDING/CANCELLING/DROPPING OF SUBJECTS
+  - rectification_of_grades
+  - completion_of_grades
+  - dropping_out
+  - honorable_dismissal
+  - scholarship
+  - inform_scholarship_type
+  - student_assistantship
+  - special_program_ra_9547
+  - if_grade_is_completed
+  - password_in_gbs
+  - student_id
+  - professor_of_our_courses
+  - request_for_re-schedule_cat
+  - when_schedule_to_take_cat
+  - releasing_cat_result
+  - cannot_register_online_portal
+  - average_passing_rate
+  - cannot_complete_registration_process
+  - enroll_without_cat
+  - register_manually_or_on-site
+  - below_average_passing_rate
+  - submit_requirements_after_exam
+  - take_exam_same_day_as_registration
+  - know_the_cat_result
+  - passing_rate_courses
+  - Cics_dean
+  - CSU_Deans
+  - CTED_dean
+  - CHM_dean
+  - CBEA_dean
+  - CCJE_dean
+  - CA_dean
+  - shift_course
+  - transfer_school
+  - guidance_office_hours
+  - guidance_contact_info
+  - available_scholarships
+  - tdp_tes_requirements
+  - win_gatchalian_requirements
+  - angara_requirements
+  - affidavit_lost_id
+  - osdw_office_hours
+  - osdw_contact_info
+  - admission_office_hours
+  - admission_contact_info
+  - what_is_cat
+  - register_portal
+  - why_take_cat
+  - who_should_take_cat
+  - when_is_cat
+  - where_is_cat
+  - is_registration_required
+  - where_to_register
+  - is_there_fee
+  - can_choose_campus
+  - course_not_offered
+  - what_time_test
+  - what_to_bring
+  - how_many_items
+  - what_to_review
+
+
+
+
+slots:
+  student_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: student_type
+  otr_issuance_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: otr_issuance_type
+
+  scholarship_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: scholarship_type
+entities:
+  - student_type
+  - otr_issuance_type
+  - scholarship_type
+
+actions:
+  - action_ask_student_type
+  - action_give_requirements
+  - action_ask_otr_issuance_type
+  - action_give_otr_requirements
+  - action_ask_scholarship_type
+  - action_give_scholarship_details
+
+responses:
+
+  utter_scholarship:
+    - text: "If you want to apply for scholarship  you can proceed to OSDW  Office to inquire."
+
+  utter_otr__:
+    - text: |
+        📄 PROCEDURES FOR THE MAIDEN ISSUANCE OF OFFICIAL TRANSCRIPT OF RECORDS
+
+        First issuance and release of OTR of the Graduates
+
+        Requirements:
+        - A Document Request Form — you can get this from the Registrar’s Office.
+        - Your Student Terminal Clearance — also from the Registrar’s Office.
+        - If you’re in a Graduate School program, you’ll need to submit your hard-bound thesis.
+        - And don’t forget the Official Receipt — you’ll get this after payment at the Cashier’s Office.
+
+        Make sure everything is complete and properly signed before submitting it, so your request gets processed without delays!
+
+        Client steps:
+        If you need to request your Official Transcript of Records (OTR), here’s what to do:
+        - Go to the Registrar’s Office and fill out a Document Request Form.
+        - After that, head to the Cashier’s Office to pay the fee for the OTR — it's ₱50 per page.
+        - Once you've paid, submit all the requirements along with your official receipt back to the Registrar’s Office.
+
+        And you're done! Just wait for further instructions or a notification once your document is ready for release.
+
+    - text: |
+        📄 PROCEDURES FOR THE RE-ISSUANCE OF OFFICIAL TRANSCRIPT OF RECORDS
+
+        Issuance of the 2nd request for OTR to the Graduates
+
+        Requirements:
+        To request a document, you’ll need:
+        - A Document Request Form, which you can get from the Registrar’s Office.
+        - And an Official Receipt, which you’ll get after paying the corresponding fee at the Cashier’s Office.
+
+        Once you have both, just submit them to the Registrar so they can process your request!
+
+        Client Steps:
+        If you’re requesting your Official Transcript of Records (OTR), here’s what you need to do:
+        - Go to the Registrar’s Office and fill out the Document Request Form.
+        - Then, head to the Cashier’s Office to pay the fee for the OTR — it’s ₱50 per page.
+        - After payment, present your Official Receipt to the Registrar’s Office so they can begin processing your request.
+
+        That’s it! Just wait for the Registrar to notify you when your OTR is ready for pickup.
+
+  utter_enrollment_process:
+    - text: |
+        📋 PROCEDURES FOR THE ENROLLMENT OF FRESHMEN:
+
+        Once you’ve passed the admission test, here are the documents you need to prepare:
+        - Socio-Economic Profile Form (from Dean’s Office)
+        - Free Higher Education Opt-in/Opt-out Form (Dean’s Office)
+        - Advising Form (Dean’s Office)
+        - Admission Test Result
+        - PSA/NSO Birth Certificate
+        - Form 138 or SHS Card
+        - Good Moral Certificate
+        - Data Profile Sheet (download from CSU website)
+        - Assessment Form (Registrar’s Office)
+        - Official Receipt (Cashier’s Office)
+
+        📌 Client Steps:
+        1. Submit your documents to the Dean’s Office and get your advising form.
+        2. Proceed to Registrar’s Office to verify and get your assessment form.
+        3. Pay at the Cashier’s Office (skip if under RA 10931).
+        4. Get validated in the Accounting Office.
+        5. Return to Registrar’s Office to receive your class cards.
+        ✅ You are now officially enrolled!
+
+        📋 PROCEDURES FOR THE ENROLLMENT OF TRANSFEREES:
+
+        - Socio-Economic Profile (from Dean’s Office)
+        - Advising Form (from Dean’s Office)
+        - Admission Test Result
+        - PSA/NSO Birth Certificate
+        - Form 138
+        - Good Moral Certificate
+        - Transcript of Records
+        - Honorable Dismissal
+        - Subject Credit Form (Registrar’s Office)
+        - Data Profile Sheet (from CSU website)
+        - Assessment Form (Registrar)
+        - Official Receipt (Cashier)
+
+        📌 Client Steps:
+        1. Secure forms from Dean’s Office.
+        2. Submit documents to Registrar’s Office.
+        3. Pay fees at the Cashier’s Office (or skip if under RA 10931).
+        4. Get validation at the Accounting Office.
+        ✅ You are now officially enrolled!
+
+        📋 PROCEDURES FOR THE ENROLLMENT OF OLD STUDENTS:
+
+        - Socio-Economic Profile Form (from Dean’s Office)
+        - Advising Form (from Dean’s Office)
+        - Assessment Form (Registrar)
+        - Official Receipt (Cashier)
+
+        📌 Client Steps:
+        1. Get forms from Dean’s Office and fill them out.
+        2. Submit documents to the Registrar.
+        3. Pay fees at the Cashier (or skip if covered by RA 10931).
+        4. Proceed to Accounting Office for validation.
+        ✅ You are now officially enrolled!
+
+  utter_fallback:
+    - text: "I'm sorry, but I didn't understand that. Can you rephrase your question?"
+  utter_greet:
+    - text: "Hello! How can I assist you?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_affirm:
+    - text: "Great!"
+  utter_deny:
+    - text: "Okay, no problem."
+  utter_thank:
+    - text: "You're welcome!"
+  utter_bot_challenge:
+    - text: "I am a virtual assistant powered by Rasa."
+  utter_badwords_response:
+    - text: "Please refrain from using offensive words even if you are talking to a bot"
+
+########### registrar ########################################
+  utter_ask_student_type:
+    - text: "Are you a new student, transferee, or returning student?"
+
+  utter_ask_otr_issuance_type:
+    - text: "Is this request for your Transcript of Records a maiden (first issuance) or a re-issuance (second or later request)?"
+
+  utter_cog:
+    - text: |
+        PROCEDURES FOR THE ISSUANCE OF CERTIFICATE OF GRADES 
+        Requirements:
+        1. A Document Request Form, which you can get from the Registrar’s Office.
+        2. And an Official Receipt, which you’ll get after paying the corresponding fee at the Cashier’s Office.
+        ..
+        Here’s what you need to do:
+        1. Go to the Registrar’s Office and fill out the Document Request Form.
+        2. Then, proceed to the Cashier’s Office to pay the fee — it’s ₱30 per semester.
+        3. Once paid, present the Official Receipt to the Registrar’s Office to have your request processed.
+  utter_cav:
+    - text: |
+        PROCEDURES FOR THE ISSUANCE OF CERTIFICATION OF AUTHENTICATION AND VERIFICATION (CAV) 
+        To request this document, you’ll need to prepare the following:
+        1. A Document Request Form — you can get this from the Registrar’s Office.
+        2. A photocopy of your Transcript of Records and your Diploma.
+        3. And your Official Receipt, which you’ll get after payment at the Cashier’s Office.
+        ..
+        Here’s what you need to do:
+        1. Go to the Registrar’s Office and fill out the Document Request Form.
+        2. Then, head to the Cashier’s Office to pay the CAV fee — ₱120 per set.
+        3. After paying, submit your Official Receipt along with the other requirements to the Registrar’s Office.
+        Once submitted, just wait for an update on when your CAV will be ready for release.
+  utter_re_issuance_of_diploma:
+    - text: |
+        PROCEDURES FOR THE RE-ISSUANCE OF DIPLOMA 
+        Requirements:
+        To process your request for re-issuance of diploma, you’ll need the following:
+        1. A Document Request Form, which you can get from the Registrar’s Office.
+        2. And an Official Receipt, which you’ll receive after payment at the Cashier’s Office.
+        ..
+        Here’s what you need to do:
+        1. Go to the Registrar’s Office and fill out a Document Request Form.
+        2. Next, go to the Cashier’s Office to pay the re-issuance fee — that’s ₱200 per copy.
+        3. After payment, submit the Official Receipt to the Registrar’s Office so they can process your request.
+        Once that’s done, just wait for a notification when your diploma is ready for pickup.
+
+  utter_add_drop_cancel:
+    - text: |
+        PROCEDURES FOR ADDING/CANCELLING/DROPPING OF SUBJECTS 
+        To request for adding, cancelling, or dropping a subject, make sure you have the following:
+        1. A Document Request Form — available at the Registrar’s Office.
+        2. The Adding/Cancelling/Dropping Form — you can get this from your college department. Don’t forget to have it signed by your instructor and approved by the College Dean.
+        3. An Official Receipt — after paying the required fee at the Cashier’s Office.
+        ..
+        If you’re planning to add, cancel, or drop a subject, here’s what you need to do:
+        1. Get the Adding/Cancelling/Dropping Form from your college department.
+        2. Fill it out, and make sure it’s signed by your professor or instructor, then have it approved by the College Dean.
+        3. Once that’s done, go to the Registrar’s Office and fill out a Document Request Form.
+        4. Submit it along with the signed Adding/Cancelling/Dropping Form and your Official Receipt as proof of payment.
+        5. The Registrar will then instruct you to go to the Accounting Office to update your student account.
+        6. You’ll be given a new assessment form that reflects your updated fees.
+        That’s it! Make sure to keep copies of your documents for your records.
+
+  utter_rectification_of_grades:
+    - text: |
+        PROCEDURES FOR THE RECTIFICATION OF GRADES 
+        To request this, you’ll need to prepare the following:
+        1. A Request Letter from your Instructor.
+        2. A Grade Sheet — you can get this from the Registrar’s Office, and it must be signed by your Instructor and approved by the College Dean.
+        ..
+        If you're requesting for grade submission or correction, here’s what you need to do:
+        1. Ask your Instructor or Professor for a Request Letter, stating the need for grade submission or adjustment.
+        2. Make sure the letter is duly signed and approved by your College Dean.
+        3. After that, you’ll be issued an updated Grade Sheet.
+        4. Finally, go to the Registrar’s Office and submit the signed Request Letter along with the updated Grade Sheet.
+        Once submitted, just wait for the registrar to process your request or notify you of the next steps.
+
+  utter_completion_grades:
+    - text: |
+        PROCEDURES FOR THE COMPLETION OF GRADES 
+        To complete your request, make sure you have the following:
+        1. A Completion Form — you can get this directly from your Instructor or Professor.
+        2. It must be duly signed and approved by the College Dean.
+        ..
+        If you’re completing a requirement for an incomplete grade, here’s what to do:
+        1. Ask your Instructor or Professor for a Completion Form.
+        2. Make sure it’s duly signed by them and approved by your College Dean.
+        3. Once the form is complete, submit it to the Registrar’s Office for processing.
+        That’s it! Just wait for the Registrar to update your records or notify you if additional steps are needed.
+
+  utter_drop_out:
+    - text: |
+        PROCEDURES FOR DROPPING OUT 
+        If you're planning to drop out, the document you’ll need to prepare is a Drop-out Form which you can get from the Registrar.
+        ..
+        If you're planning to drop out, here’s the process you’ll need to follow:
+        1. Fill out the Drop-out Form, then get it signed by the College Dean.       
+        2. Proceed to the Registrar and submit the Drop-out Form. You will receive a copy of the Drop-out Form.
+
+  utter_honorable_dismissal:
+    - text: |
+        PROCEDURES FOR THE ISSUANCE OF HONORABLE DISMISSAL 
+        For the issuance of your Honorable Dismissal, here are the documents you'll need to prepare:
+        1. Document Request Form — you can get this from the Registrar.    
+        2. Student Clearance — also from the Registrar.
+        ..
+        To request your Honorable Dismissal, follow these steps:
+        1. Fill out the Document Request Form and submit it along with your accomplished Student Clearance to the Registrar.
+        2. You will receive your Transfer Credential/Honorable Dismissal with the attached Certificate of Grades (COG).
+
+
+  utter_open_programs:
+    - text: |
+        Here is the list of open programs in CSU Gonzaga:
+        - BACHELOR OF SCIENCE IN AGRICULTURE
+        - BACHELOR OF SCIENCE IN ACCOUNTING INFORMATION SYSTEM
+        - BACHELOR OF SCIENCE IN CRIMINOLOGY
+        - BACHELOR OF SCIENCE IN HOSPITALITY MANAGEMENT
+        - BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY
+        - BACHELOR OF ELEMENTARY EDUCATION
+        - BACHELOR OF SECONDARY EDUCATION
+
+  utter_admission_process:
+    - text: |
+        ADMISSION OF INCOMING COLLEGE FRESHMEN/TRANSFEREES 
+        Requirements:
+        1. A photocopy of your school ID or any valid government-issued ID (just 1 copy will do).
+        2. A certificate of enrollment showing that you’re currently in Grade 12 (1 copy).
+        3. If you're a transferee, you’ll also need a certified true copy of your grades (1 copy).
+        4. Two 1x1 ID photos with a white background.
+        5. If someone else is submitting the requirements for you, they’ll need to bring an authorization letter from you (just 1 copy).
+        6. And finally, make sure to get the Registration Form for the College Admission Test (CAT) from the Admission Office.
+        ..
+        Here's what you need to do:
+        1. First, you need to submit your requirements to the Admission Office. It’s usually located in the admin building. Once everything is complete, you'll be enlisted for the College Admission Test (CAT).
+        2. After submitting your documents, just wait for an update—usually posted online or sent to you—about your CAT schedule and testing venue. They'll let you know where and when you’ll take the test.
+        3. On your scheduled date, head to the assigned campus and take the CAT. The test typically runs for about 3 and a half hours.
+        4. Then, you have to wait for the results. It usually takes around 2 and a half months for the results to be processed and released.
+        5. Once the results are out, you can view your CAT rating online, and if you need it, you can get a printed certificate from the Admission Office.
+
+
+  ###### guidance ################
+
+
+  utter_counselling:
+    - text: |
+        COUNSELING SERVICE 
+        COUNSELING refers to the guidance service wherein the counselor assists the counselees in the development of a well-functioning individual primarily by enhancing and utilizing their potentials to the fullest and plan their future in accordance with their abilities, interests and needs.
+        Requirements:
+        1. You’ll need to fill out an Intake Form (1 copy), which you can get from the Guidance and Counseling Center. This form is usually completed after a counseling session or as part of the process when accessing guidance services. Be sure to fill it out completely and submit it as instructed by the guidance staff.
+
+  utter_good_moral:
+    - text: |
+        ISSUANCE OF CERTIFICATE OF GOOD MORAL CHARACTER
+        If you’re requesting a Certificate of Good Moral Character (CGMC), you’ll need the following:
+        1. A CGMC Request Form (1 copy) — get this from the Guidance and Counseling Center.
+        2. An Official Receipt — pay the necessary fee at the Cashier and keep the receipt as proof of payment.
+        ..
+        If you’re requesting a Certificate of Good Moral Character, here’s what to do:
+        1. Go to the Guidance Office and let the staff know you're requesting a CGMC.
+        2. You’ll be given a request form — fill it out completely.
+        3. If you’re a graduate of the university, proceed to the Cashier and pay the ₱30 fee.
+        4. After paying, return to the Guidance Office and submit the filled-out request form along with your official receipt.
+        5. Once processed, you’ll receive your certificate.
+        6. Before leaving, sign the CGMC request logbook as confirmation.
+  utter_referral_service:
+    - text: |
+        REFERRAL SERVICE 
+        Requirements:
+        1. You’ll need to secure a Referral Form (1 copy), which you can get from the Guidance and Counseling Center.
+        ..
+        If you’re visiting the Guidance and Counseling Center for a referral service, here’s what to expect:
+        1. Go to the Guidance Office and let the staff know the purpose of your visit.
+        2. You’ll have a short conversation with the Guidance Coordinator before starting your counseling session, which usually lasts about 45 minutes to 1 hour.
+        3. After the session, you’ll be asked to fill out an intake form provided by the coordinator.
+        4. Finally, sign the Director’s/Counselor’s Logbook before leaving the office.
+
+
+############osdw############
+  utter_student_assistantship:
+    - text: |
+        STUDENT ASSISTANTSHIP PROGRAM
+        If you’re applying for the Student Assistantship Program, make sure you have the following:
+        1. A duly accomplished Student Assistantship Application Form (1 copy) — you can get this from the OSDW Office.
+        2. A photocopy of your Assessment or Enrollment Form for the current semester (1 copy) — request this from the Registrar’s Office.
+        ...
+        If you're applying for the Student Assistantship Program, here's what you need to do:
+        1. Go to the OSDW Office and sign in the Visitor’s/Client Logbook to begin your application.
+        2. You’ll be given a Student Assistantship Application Form — fill it out completely and submit it along with the required documents.
+        3. Once your application is received, you'll be given a schedule for an interview.
+        4. On your scheduled date, show up for the interview at the assigned venue.
+        5. If you're approved and selected, you’ll receive a copy of the Special Order and be informed about the orientation schedule.
+        6. Attend the orientation with other selected student assistants. 
+        7. After that, you'll be assigned to your respective office for deployment.
+
+  utter_ra_9547:
+    - text: |
+        APPLICATION FOR THE SPECIAL PROGRAM FOR THE EMPLOYMENT OF STUDENTS OR RA 9547
+        If you’re applying for the SPES Program, here are the documents you need to prepare:
+        1. A Certificate of Enrollment, Indigence, or Employment – use the DOLE Pro Forma Forms (1 copy).
+        2. A SPES Application Form (1 copy) – get this from DOLE or the CSU-OSDW Office.
+        3. A SPES Oath of Undertaking (1 copy) – also from DOLE/CSU-OSDW.
+        4. A SPES Contract (1 copy) – from DOLE/CSU-OSDW.
+        5. A photocopy of your Enrollment or Assessment Form (1 copy) – from the Registrar’s Office.
+        6. A photocopy of your School ID (1 copy).
+        7. A photocopy of your Birth Certificate (1 copy).
+        8. Your Latest Certification of Grades (1 copy) – request this from the Registrar’s Office.
+        9. A Student Assistantship Form (1 copy) – available at CSU/OSDW.
+        10. A 1x1 ID picture of the student applicant (1 copy).
+        ..
+        Interested in the Special Program for Employment of Students (SPES)? Here's how you can apply:
+        1. Stay updated by monitoring announcements from CSU or OSDW about SPES openings.
+        2. Once slots are available, go to the OSDW Office and sign the Client/Visitor’s Logbook to start your application.
+        3. You'll receive a SPES Application Form — fill it out and you'll be given a schedule for your interview.
+        4. On the scheduled day, show up for your interview.
+        5. If you're qualified and selected, you'll receive the necessary DOLE forms. Fill them out completely and start gathering the required documents.
+        6. You’ll also need to pay a ₱5.50 GSIS insurance fee, so make sure to settle that before submitting your documents.
+        7. Submit all completed forms and requirements on or before the deadline set by OSDW.
+        8. Finally, just wait for the announcement. If approved, you’ll be given a copy of the Special Order from the OSDW Office.
+
+  utter_signing_of_clearance:
+    - text: |
+        SIGNING OF STUDENT CLEARANCE
+        To process your clearance, you’ll need a Student Clearance Form (1 copy).
+        You can get this either from the Registrar’s Office or through your College Governor, depending on how your college distributes it.
+        ..
+        If you're completing your Student Clearance, here’s what to do at the OSDW Office:
+        1. Go to the OSDW Office and sign the Client/Visitor’s Logbook.
+        2. Present your duly filled-out Student Clearance Form to the OSDW Coordinator or Director.
+        3. The coordinator/director will conduct a brief interview with you.
+        4. After the interview, your clearance will be signed if everything is in order.   
+
+
+##May 15
+  utter_grades_completed:
+    - text: |
+        If you want to know if your grades are already completed, you can go to the registrar to ask or check your account in the GBS.
+
+  utter_password_gbs:
+    - text: |
+        Proceed to the registrar’s office to ask Sir Reymark T. Sosa.
+
+  utter_student_id:
+    - text: |
+        For the issuance of ID for 1st year students, you need to send the following details to this messenger account: Igpidmaker idmaker
+        ..
+        Here are the requirements for getting your ID:
+        1.	Surname, First Name, Middle Initial (Dela Cruz, Juan, C)
+        2.	ID Number and Course (22-12345 BSIT)
+        3.	A picture of you in a white background and wearing your type A school uniform.
+        4.	Your Signature (must be written in a white background)
+
+  utter_professor_of_our_courses:
+    - text: |
+        You may ask your college Dean if you want to know who is or are the professor of your courses.
+  utter_re-schedule_exam:
+    - text: |
+        Yes, just inform the Campus Admissions Officer through a request letter
+  utter_releasing_cat_result:
+    - text: |
+        The releasing of the Cat Result will be on the month of May for incoming freshman and June for the transferees.
+  utter_cannot_register_online_portal:
+    - text: |
+        You can proceed to the campus and approach the Campus Admissions Officer for on-site registration assistance.
+  utter_average_passing_rate:
+    - text: |
+        The average passing rate for non-board courses (BSIT, BSAIS, and BSHM) is 20% and for the board courses (BEED, BSED, BSA, BSCRIM) is 80% up.
+  utter_cannot_complete_registration_process:
+    - text: |
+        Your registration cannot be completed if there are missing details that you did not provided in the portal.
+  utter_request_for_re-schedule_cat:
+    - text: |
+        Yes, just inform the Campus Admission Officer through request letter.
+  utter_when_schedule_to_take_cat:
+    - text: |
+        The schedule for the different batches of CAT will be posted thru the official FB Page of CSU-Gonzaga, The Office of the CEO-CSUG.
+  utter_enroll_without_cat:
+    - text: |
+        No. All incoming freshmen including transferees from other campus must take the College Admission Test.
+  utter_register_manually_or_on-site:
+    - text: |
+        In cases where the applicant is living the remote areas wherein internet connection is unavailable then the applicant can apply for registration on-site in the Campus Admission Office.
+  utter_below_average_passing_rate:
+    - text: |
+        No. He or She must pass the required score to be able to enroll in that course.
+  utter_submit_requirements_after_exam:
+    - text: |
+        Yes. Just inform the Campus Admission Officer for the reason of late submission.
+
+  utter_take_exam_same_day_as_registration:
+    - text: |
+        No. Because the College Admission Test is in a scheduled basis based on the day of registration.
+  utter_know_the_cat_result:
+    - text: |
+        The releasing of the CAT Result will be on the month of May for incoming freshmen and June for transferees.
+  utter_passing_rate_courses:
+    - text: |
+        The average passing rate for non-board courses (BSIT, BSAIS, and BSHM) is 20% and for the board courses (BEED, BSED, BSA, BSCRIM) is 80% up.
+ 
+
+  ###################deans######################
+  utter_CICS_dean:
+    - text: "Dr. Clyden Charl B. Alibania is the Dean of COLLEGE OF INFORMATION AND COMPUTING SCIENCES"
+      image: "https://gonzaga.csu.edu.ph/uploads/college/DOC-CLYDEN.jpg"
+
+  utter_CA_dean:
+    - text: "Dr. Jayrome S. Butay is the Dean of COLLEGE OF AGRICULTURE"
+      image: "https://gonzaga.csu.edu.ph/uploads/college/dean%20jayrome1.jpg"
+
+  utter_CCJE_dean:
+    - text: "Prof. Ohlie E. Malazzab is the Dean of COLLEGE OF CRIMINAL JUSTICE EDUCATION"
+      image: "https://gonzaga.csu.edu.ph/uploads/college/DEAN-OHLIE.jpg"
+
+  utter_CBEA_dean:
+    - text: "Dr. Jay F. Omotoy is the Dean of COLLEGE OF BUSINESS ENTREPRENEURSHIP and ACCOUNTANCY"
+      image: "https://gonzaga.csu.edu.ph/uploads/college/dean%20jay1.jpg"
+
+  utter_CHM_dean:
+    - text:  "Dr. Jeffrey Obedoza is the Dean of COLLEGE OF HOSPITALITY MANAGEMENT"
+      image: "https://gonzaga.csu.edu.ph/uploads/college/DOC%20JEFF.jpg"
+
+  utter_CTED_dean:
+    - text: "Dr. Romar R. Banadero is the Dean of COLLEGE OF TEACHER EDUCATION"
+      image: "https://gonzaga.csu.edu.ph/uploads/college/dean%20romar.jpg"
+
+  utter_CSU_deans:
+    - text: |
+        Here are the current active Deans Of CSU Gonzaga
+        Dr. Jayrome S. Butay - College of Agriculture
+        Dr. Jay F. Omotoy - College of Business Entrepreneurship and Accountancy
+        Prof. Ohlie E. Malazzab - College of Criminal Justice Education
+        Dr. Jeffrey Obedoza - College of Hospitality Management
+        Dr. Clyden Charl B. Alibania - College of Information and Computing Sciences
+        Dr. Romar R. Banadero - College of Teacher Education
+
+#####May 28
+  utter_shift_course:
+    - text: |
+        To shift to another course:
+        1. You need to secure a form with the approval of the dean of your current college and the dean of the new college.
+        2. Submit the approved form to the registrar to change your student details.
+        3. Your academic average and overall decision will also be considered.
+
+  utter_transfer_school:
+    - text: |
+        To transfer to another school/university. You need to do the following:
+        1. First, fill up the exit form with your personal information and intent to shift.
+        2. The guidance office will ask for your reason for transferring.
+
+  utter_guidance_office_hours:
+    - text: |
+        Office hours of the Guidance office are from 8:00 AM to 5:00 PM, Monday to Friday.
+
+  utter_guidance_contact_info:
+    - text: |
+        Contact Information of the Guidance Office:
+        FB: Catherine R. Rodriguez Joyce
+        FB: Aminel G. Espedido 
+        Email: cathyrosete.rodriguez@gmailcom
+        Phone Number: 0926 681 1077
+
+  utter_available_scholarships:
+    - text: |
+        The following are the available scholarships:
+        1. TDP (Tulong Dunong Program) – ₱7,500/semester
+        2. TES (Tertiary Educational Subsidy, CHED) – ₱10,100/semester
+        3. TDP SUC – ₱7,500/semester
+        4. Kuya Win Gatchalian Scholarship (under TDP SUC)
+        5. PLDT Gabay Guro (for EDUC students only)
+        6. Angara Scholarship
+
+  utter_tdp_tes_requirements:
+    - text: |
+        Scholarship application requirements for TDP and TES:
+        1. Assessment Form of current semester
+        2. Certificate of Grades
+        3. Photocopy of validated ID with 3 specimen signatures
+        4. Certificate of Indigency (MSWD)
+        5. Priority: 4Ps, Listahanan, no local colleges in municipality (SUC)
+
+  utter_win_gatchalian_requirements:
+    - text: |
+        Scholarship application requirements for Kuya Win Gatchalian Scholarship:
+        1. Application Form with 2x2 photo
+        2. Barangay Certificate of Indigency
+        3. Certified true copy of Certificate of Registration
+        4. Photocopy of Grades and Validated School ID
+        5. Voter's certificate (Student and Parents/Guardians)
+        6. ITR or Affidavit (Non-filing, Guardianship)
+
+  utter_angara_requirements:
+    - text: |
+        Scholarship application requirements for Angara Scholarship:
+        1.	For Old Students: Assessment Form, Grades, School ID, Certificate of Indigency
+        2.	For New Students: Grade 12 card and same documents as above.
+
+  utter_affidavit_lost_id:
+    - text: |
+        Steps to obtain an Affidavit of Lost ID:
+        1. Sign the log sheet
+        2. Present receipt of payment for new ID
+        3. Receive and complete the Affidavit of Loss form
+        4. Undergo a short interview
+        5. Staff will sign the completed form
+        Fees:
+        For Affidavit: ₱50
+        For ID Replacement: ₱160
+        ₱210 in total
+
+  utter_osdw_office_hours:
+    - text: |
+        The office hours of OSDW are from 8:00 AM to 5:00 PM, Monday to Friday.
+
+  utter_osdw_contact_info:
+    - text: |
+        Contact Information of the OSDW Office:
+        FB: Jamaica Mae Reyes Figueras
+        Office FB: CSU-G OSDW
+        Email: jamaecareyes.figueras@csu.edu.ph
+
+  utter_admission_office_hours:
+    - text: |
+        The office hours of Admission Office are from 8:00 AM to 5:00 PM, Monday to Friday.
+
+  utter_admission_contact_info:
+    - text: |
+        Contact Information of the Admission Office:
+        Katherine R. Lemi - Campus Admission Officer
+        Phone Number: 0969 095 5800
+
+#####
+
+  utter_what_is_cat:
+    - text: |
+        CAT stands for College Admission Test. It is CSU’s standardized entrance exam.
+
+  utter_register_portal:
+    - text: |
+        For New Students
+        If you’re a new student and wish to register for admission, please follow the instructions outlined below:
+        1.	Visit the website: myportal.csu.edu.ph.
+        2.	If you haven’t registered yet, click on the Register here button.
+        3.	Enter your email address to verify. Ensure that the email address is valid. Alternatively, you can choose to log in via Google if you’re already signed in.
+        4.	Click on "Verify Email". A verification email will be sent to your inbox. Open the email and click on the provided link to proceed with pre-registration.
+        5.	Complete the form, ensuring all necessary information is correctly filled in.
+        6.	After submission, you have the option to verify or modify the data you’ve entered.
+        7.	Once you’ve checked everything, click on "Submit". Your login credentials will then be displayed.
+        8.	The system will generate an automated password for you to use, and your username will be the email address you registered with.
+        9.	Log into the system using your new username and password.
+        10.	Once logged in, your dashboard will appear with a "Register for Admission" button.
+        11.	Clicking this button will bring up forms that need to be completed with the required information.
+        12.	Ensure all necessary data has been filled in correctly.
+        13.	Click on "Agree" to accept the data privacy agreement policy.
+        14.	After submission, you’ll be redirected back to your dashboard where you can wait for your CSU-CAT Examination schedule. You’ll be notified once a schedule has been assigned to you.
+
+
+  utter_why_take_cat:
+    - text: |
+        The CAT is required as per quality standards under RA 10931.
+
+  utter_who_should_take_cat:
+    - text: |
+        All incoming freshmen who graduated under the K-12 program must take the CAT.
+
+  utter_when_is_cat:
+    - text: |
+        The CAT is conducted in the first quarter of the year, from January to March.
+
+  utter_where_is_cat:
+    - text: |
+        The CAT is administered at all CSU campuses: Andrews, Aparri, Carig, Gonzaga, Lal-lo, Lasam, Piat, Solana, and Sanchez Mira.
+
+  utter_is_registration_required:
+    - text: |
+        Yes, online registration starts October 27, 2023 and ends in May 2024.
+
+  utter_where_to_register:
+    - text: |
+        Register at https://myportal.csu.edu.ph
+
+  utter_is_there_fee:
+    - text: |
+        No. The CAT is free of charge. No registration or exam fees.
+
+  utter_can_choose_campus:
+    - text: |
+        No. You must take the test at the campus where you enlisted.
+
+  utter_course_not_offered:
+    - text: |
+        Yes, you can still take the test at the nearest campus even if your preferred course is not offered there.
+
+  utter_what_time_test:
+    - text: |
+        Arrive before 8:00 AM for orientation. The test starts at 9:00 AM.
+
+  utter_what_to_bring:
+    - text: |
+        Bring pencils, sharpener, registration form, valid ID, and optionally food and water if traveling far.
+
+
+  utter_how_many_items:
+    - text: |
+        The CAT consists of 200 items.
+
+  utter_what_to_review:
+    - text: |
+        Review these subjects: General Info, English Usage, Verbal Reasoning, Reading Comprehension, Science, and Math.
+  
+   
+        
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
